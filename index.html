@@ -246,6 +246,39 @@
       transform: scale(0.94);
     }
 
+
+    /* أيقونة تجميع الأقسام العلوية وشريط الأقسام المنسدل */
+    .icon-btn.cats-open {
+      background: linear-gradient(135deg, var(--accent-rose) 0%, #c81e62 100%);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 12px rgba(255, 77, 141, 0.3);
+    }
+
+    .top-cats-drawer {
+      display: none;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-subtle);
+      animation: fadeSlideDown 0.2s ease;
+    }
+
+    .top-cats-drawer.open {
+      display: block;
+    }
+
+    .top-cats-drawer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .icon-btn .mini-badge {
       position: absolute;
       top: -5px;
@@ -1300,9 +1333,14 @@
     <div class="header-top-row">
       <button class="brand-logo" onclick="resetStoreHome()" title="الرئيسية">
         <div class="brand-emblem">
-          <div class="brand-emblem-inner">
-            <i class="fa-solid fa-wand-sparkles sparkle-mini"></i>
-            <i class="fa-solid fa-gem"></i>
+          <div class="brand-emblem-inner" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14" cy="35" r="5" stroke="#f5b942" stroke-width="2.4"/>
+              <circle cx="34" cy="35" r="5" stroke="#ff4d8d" stroke-width="2.4"/>
+              <path d="M18 31L33 11" stroke="#f5b942" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M30 31L15 11" stroke="#ff4d8d" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M24 7L25.4 10.2L28.6 11.6L25.4 13L24 16.2L22.6 13L19.4 11.6L22.6 10.2L24 7Z" fill="#f5b942"/>
+            </svg>
           </div>
         </div>
         <div class="brand-text-wrap">
@@ -1329,6 +1367,9 @@
           <i class="fa-solid fa-cart-shopping"></i>
           <span class="mini-badge" id="headerCartBadge">0</span>
         </button>
+        <button type="button" class="icon-btn" id="catsToggleBtn" onclick="toggleTopCategoriesBar()" title="أقسام المتجر" aria-label="أقسام المتجر" aria-expanded="false">
+          <i class="fa-solid fa-layer-group"></i>
+        </button>
       </div>
     </div>
 
@@ -1339,6 +1380,27 @@
       <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" title="مسح البحث" aria-label="مسح البحث">
         <i class="fa-solid fa-circle-xmark"></i>
       </button>
+    </div>
+
+    <!-- شريط الأقسام المجمع عند الضغط على الأيقونة العلوية -->
+    <div class="top-cats-drawer" id="topCategoriesDrawer" aria-label="قائمة الأقسام">
+      <div class="top-cats-drawer-inner" id="topCategoriesBar">
+        <button type="button" class="cat-pill" data-cat="الكوافير والعناية" onclick="selectCategory('الكوافير والعناية', this)">
+          <i class="fa-solid fa-scissors"></i> الكوافير والعناية
+        </button>
+        <button type="button" class="cat-pill" data-cat="المكملات الغذائية" onclick="selectCategory('المكملات الغذائية', this)">
+          <i class="fa-solid fa-pills"></i> المكملات الغذائية
+        </button>
+        <button type="button" class="cat-pill" data-cat="منتجات شي إن" onclick="selectCategory('منتجات شي إن', this)">
+          <i class="fa-solid fa-shirt"></i> منتجات شي إن
+        </button>
+        <button type="button" class="cat-pill" data-cat="العناية بالبشرة" onclick="selectCategory('العناية بالبشرة', this)">
+          <i class="fa-solid fa-face-smile-beam"></i> العناية بالبشرة
+        </button>
+        <button type="button" class="cat-pill" data-cat="العطور والإكسسوارات" onclick="selectCategory('العطور والإكسسوارات', this)">
+          <i class="fa-solid fa-gem"></i> العطور والإكسسوارات
+        </button>
+      </div>
     </div>
   </header>
 
@@ -1400,29 +1462,6 @@
     </div>
   </section>
 
-  <!-- شريط الأقسام -->
-  <nav class="categories-wrapper" aria-label="أقسام المتجر">
-    <div class="categories-bar" id="categoriesBar">
-      <button class="cat-pill active" data-cat="الكل" onclick="selectCategory('الكل', this)">
-        <i class="fa-solid fa-border-all"></i> الكل
-      </button>
-      <button class="cat-pill" data-cat="الكوافير والعناية" onclick="selectCategory('الكوافير والعناية', this)">
-        <i class="fa-solid fa-scissors"></i> الكوافير والعناية
-      </button>
-      <button class="cat-pill" data-cat="المكملات الغذائية" onclick="selectCategory('المكملات الغذائية', this)">
-        <i class="fa-solid fa-pills"></i> المكملات الغذائية
-      </button>
-      <button class="cat-pill" data-cat="منتجات شي إن" onclick="selectCategory('منتجات شي إن', this)">
-        <i class="fa-solid fa-shirt"></i> منتجات شي إن
-      </button>
-      <button class="cat-pill" data-cat="العناية بالبشرة" onclick="selectCategory('العناية بالبشرة', this)">
-        <i class="fa-solid fa-face-smile-beam"></i> العناية بالبشرة
-      </button>
-      <button class="cat-pill" data-cat="العطور والإكسسوارات" onclick="selectCategory('العطور والإكسسوارات', this)">
-        <i class="fa-solid fa-gem"></i> العطور والإكسسوارات
-      </button>
-    </div>
-  </nav>
 
   <!-- شريط معلومات المتجر، الفرز، وتغيير الأعمدة -->
   <div class="toolbar-strip">
@@ -11053,7 +11092,7 @@
     // حالة التطبيق
     let cart = [];
     let favorites = [];
-    let activeCategory = "الكل";
+    let activeCategory = "";
     let currentFilteredList = [];
     let visibleLimit = STORE_CONFIG.pageSize;
     let currentDetailProduct = null;
@@ -11138,7 +11177,7 @@
 
       let list = getVisibleProducts();
 
-      if (activeCategory !== "الكل") {
+      if (activeCategory && activeCategory !== "الكل") {
         list = list.filter(p => normalizeText(p.category) === normalizeText(activeCategory));
       }
 
@@ -11256,24 +11295,45 @@
         .replace(/"/g, "&quot;");
     }
 
+    function toggleTopCategoriesBar(forceState) {
+      const drawer = document.getElementById("topCategoriesDrawer");
+      const btn = document.getElementById("catsToggleBtn");
+      if (!drawer) return;
+      const shouldOpen = typeof forceState === "boolean" ? forceState : !drawer.classList.contains("open");
+      drawer.classList.toggle("open", shouldOpen);
+      if (btn) {
+        btn.classList.toggle("cats-open", shouldOpen);
+        btn.setAttribute("aria-expanded", String(shouldOpen));
+      }
+    }
+
+    function syncCategoryPills() {
+      document.querySelectorAll(".cat-pill").forEach(btn => {
+        const isSelected = Boolean(activeCategory) && btn.getAttribute("data-cat") === activeCategory;
+        btn.classList.toggle("active", isSelected);
+      });
+    }
+
     function selectCategory(catName, btnEl) {
       closeAllModals();
-      activeCategory = catName;
+      activeCategory = (activeCategory === catName) ? "" : catName;
       visibleLimit = STORE_CONFIG.pageSize;
-      document.querySelectorAll(".cat-pill").forEach(btn => btn.classList.remove("active"));
-      if (btnEl) {
-        btnEl.classList.add("active");
+      syncCategoryPills();
+      if (btnEl && activeCategory) {
         btnEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
       }
       applyFilters();
+      toggleTopCategoriesBar(false);
     }
 
     function selectCategoryByName(catName) {
-      const targetBtn = Array.from(document.querySelectorAll(".cat-pill"))
-        .find(btn => btn.getAttribute("data-cat") === catName);
-      selectCategory(catName, targetBtn || null);
-      const bar = document.getElementById("categoriesBar");
-      if (bar) bar.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      activeCategory = catName;
+      visibleLimit = STORE_CONFIG.pageSize;
+      syncCategoryPills();
+      applyFilters();
+      toggleTopCategoriesBar(true);
+      const headerEl = document.querySelector(".site-header");
+      if (headerEl) headerEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
 
     function clearSearch() {
@@ -11284,13 +11344,12 @@
 
     function resetStoreHome() {
       closeAllModals();
+      toggleTopCategoriesBar(false);
       document.getElementById("searchInput").value = "";
       document.getElementById("sortSelect").value = "default";
       visibleLimit = STORE_CONFIG.pageSize;
-      const allBtn = document.querySelector('.cat-pill[data-cat="الكل"]');
-      activeCategory = "الكل";
-      document.querySelectorAll(".cat-pill").forEach(btn => btn.classList.remove("active"));
-      if (allBtn) allBtn.classList.add("active");
+      activeCategory = "";
+      syncCategoryPills();
       applyFilters();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
