@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صبايا إب | متجر الجمال والعناية والمكملات وشي إن</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --bg-main: #0c0a0f;
+      --bg-surface: #15121b;
+      --bg-card: #1c1824;
+      --bg-card-hover: #241f2f;
+      --bg-glass: rgba(18, 15, 25, 0.86);
+      --text-primary: #fdfaff;
+      --text-secondary: #b6aec4;
+      --text-muted: #7e758f;
+      --accent-rose: #ff4d8d;
+      --accent-rose-soft: rgba(255, 77, 141, 0.14);
+      --accent-gold: #f5b942;
+      --accent-gold-soft: rgba(245, 185, 66, 0.15);
+      --accent-emerald: #22c55e;
+      --accent-violet: #9b5de5;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-highlight: rgba(255, 77, 141, 0.35);
+      --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.35);
+      --shadow-glow: 0 0 24px rgba(255, 77, 141, 0.22);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    body.light-mode {
+      --bg-main: #faf7fb;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-hover: #fff4f8;
+      --bg-glass: rgba(255, 255, 255, 0.88);
+      --text-primary: #1b1424;
+      --text-secondary: #534963;
+      --text-muted: #7d738e;
+      --accent-rose: #e11d67;
+      --accent-rose-soft: rgba(225, 29, 103, 0.1);
+      --accent-gold: #c98609;
+      --accent-gold-soft: rgba(201, 134, 9, 0.12);
+      --accent-emerald: #16a34a;
+      --accent-violet: #7c3aed;
+      --border-subtle: rgba(27, 20, 36, 0.1);
+      --border-highlight: rgba(225, 29, 103, 0.35);
+      --shadow-card: 0 8px 24px rgba(27, 20, 36, 0.07);
+      --shadow-glow: 0 0 20px rgba(225, 29, 103, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', Tahoma, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 92px;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(255, 77, 141, 0.11), transparent 36%),
+        radial-gradient(circle at 88% 18%, rgba(245, 185, 66, 0.08), transparent 38%),
+        radial-gradient(circle at 50% 85%, rgba(155, 93, 229, 0.08), transparent 45%);
+    }
+
+    body.light-mode {
+      background-image:
+        radial-gradient(circle at 12% 8%, rgba(225, 29, 103, 0.06), transparent 38%),
+        radial-gradient(circle at 88% 18%, rgba(201, 134, 9, 0.06), transparent 40%);
+    }
+
+    /* شريط الإعلانات العلوي */
+    .top-announcement {
+      background: linear-gradient(90deg, #3b0d25 0%, #5c1438 45%, #3a2308 100%);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .top-announcement .badge-pill {
+      background: var(--accent-gold);
+      color: #161004;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 900;
+      white-space: nowrap;
+      border: none;
+      cursor: pointer;
+    }
+
+    .top-announcement .offer-text {
+      flex: 1;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* الهيدر الزجاجي */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 95;
+      background: var(--bg-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 10px 14px 12px;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .header-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+      background: transparent;
+      border: none;
+      text-align: right;
+      color: inherit;
+    }
+
+    .brand-emblem {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ff4d8d 0%, #f5b942 100%);
+      padding: 2px;
+      box-shadow: var(--shadow-glow);
+      flex-shrink: 0;
+    }
+
+    .brand-emblem-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: #140f1d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: #f5b942;
+      font-size: 1.1rem;
+    }
+
+    .brand-emblem-inner .sparkle-mini {
+      position: absolute;
+      top: 4px;
+      left: 5px;
+      font-size: 0.56rem;
+      color: #ff4d8d;
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1.12rem;
+      font-weight: 900;
+      line-height: 1.15;
+      background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-rose) 65%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-tagline {
+      font-size: 0.67rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .brand-tagline i {
+      color: var(--accent-rose);
+      font-size: 0.64rem;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .icon-btn {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.92rem;
+      transition: var(--transition-fast);
+    }
+
+    .icon-btn:hover {
+      border-color: var(--border-highlight);
+      transform: translateY(-1px);
+    }
+
+    .icon-btn:active {
+      transform: scale(0.94);
+    }
+
+    .icon-btn .mini-badge {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      min-width: 17px;
+      height: 17px;
+      border-radius: 999px;
+      background: var(--accent-rose);
+      color: #fff;
+      font-size: 0.64rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+    }
+
+    /* شريط البحث */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 8px 12px;
+      gap: 8px;
+      transition: var(--transition-fast);
+    }
+
+    .search-bar:focus-within {
+      border-color: var(--accent-rose);
+      box-shadow: 0 0 0 3px var(--accent-rose-soft);
+    }
+
+    .search-bar i.fa-search {
+      color: var(--accent-rose);
+      font-size: 0.9rem;
+    }
+
+    .search-bar input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.88rem;
+    }
+
+    .search-bar input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .clear-search-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: none;
+      font-size: 0.85rem;
+      padding: 2px 4px;
+    }
+
+    .clear-search-btn.visible {
+      display: inline-flex;
+    }
+
+    /* بنر الترحيب والعروض المميزة */
+    .hero-section {
+      padding: 12px 14px 4px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .hero-carousel {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(135deg, rgba(255, 77, 141, 0.14) 0%, var(--bg-surface) 55%, rgba(245, 185, 66, 0.12) 100%);
+      box-shadow: var(--shadow-card);
+    }
+
+    .hero-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .hero-slide {
+      min-width: 100%;
+      padding: 18px 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-rose-soft);
+      color: var(--accent-rose);
+      border: 1px solid var(--border-highlight);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 1.25rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .hero-title .gold {
+      color: var(--accent-gold);
+    }
+
+    .hero-sub {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      max-width: 520px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-primary-glow {
+      background: linear-gradient(135deg, var(--accent-rose) 0%, #d82b6d 100%);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 8px 14px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-glow);
+      transition: var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .btn-primary-glow:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost-gold {
+      background: var(--accent-gold-soft);
+      color: var(--accent-gold);
+      border: 1px solid rgba(245, 185, 66, 0.35);
+      border-radius: var(--radius-md);
+      padding: 8px 13px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .btn-ghost-gold:hover {
+      background: rgba(245, 185, 66, 0.22);
+    }
+
+    .hero-visual {
+      width: 78px;
+      height: 78px;
+      border-radius: 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--accent-gold);
+      flex-shrink: 0;
+      box-shadow: var(--shadow-card);
+    }
+
+    .hero-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--text-muted);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .hero-dot.active {
+      width: 22px;
+      background: var(--accent-rose);
+    }
+
+    /* شريط الأقسام */
+    .categories-wrapper {
+      position: sticky;
+      top: 108px;
+      z-index: 85;
+      background: var(--bg-glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 8px 0;
+    }
+
+    .categories-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px 14px;
+      scrollbar-width: none;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .categories-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cat-pill {
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+    }
+
+    .cat-pill:hover {
+      color: var(--text-primary);
+      border-color: var(--border-highlight);
+    }
+
+    .cat-pill.active {
+      background: linear-gradient(135deg, var(--accent-rose) 0%, #c81e62 100%);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(255, 77, 141, 0.28);
+    }
+
+    /* شريط معلومات المتجر، الفرز، وتغيير الأعمدة */
+    .toolbar-strip {
+      max-width: 1280px;
+      margin: 10px auto 4px;
+      padding: 0 14px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .store-branch-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .branch-badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .branch-badge i {
+      color: var(--accent-gold);
+    }
+
+    .products-counter {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 700;
+    }
+
+    .toolbar-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sort-select {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 6px 10px;
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 700;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .layout-cycle-btn {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 6px 11px;
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+    }
+
+    .layout-cycle-btn:hover {
+      border-color: var(--border-highlight);
+    }
+
+    /* شبكة المنتجات */
+    .products-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 8px 14px 16px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px;
+    }
+
+    .products-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .products-grid.cols-4 {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    @media (min-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .products-grid.cols-3 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .products-grid.cols-4 {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media (min-width: 1080px) {
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      content-visibility: auto;
+      contain-intrinsic-size: 270px;
+    }
+
+    .product-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-highlight);
+      transform: translateY(-2px);
+    }
+
+    .prod-img-wrap {
+      position: relative;
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      height: 146px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .products-grid.cols-3 .prod-img-wrap {
+      height: 118px;
+    }
+
+    .products-grid.cols-4 .prod-img-wrap {
+      height: 98px;
+      padding: 5px;
+    }
+
+    .prod-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.25s ease;
+    }
+
+    .product-card:hover .prod-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .img-placeholder-box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: var(--text-muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-align: center;
+      background: radial-gradient(circle at center, var(--accent-rose-soft), transparent 75%);
+    }
+
+    .img-placeholder-box i {
+      font-size: 1.35rem;
+      color: var(--accent-rose);
+      opacity: 0.78;
+    }
+
+    .prod-tag {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      background: rgba(15, 12, 20, 0.78);
+      color: #f5b942;
+      border: 1px solid rgba(245, 185, 66, 0.35);
+      font-size: 0.63rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+      z-index: 2;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-float-actions {
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 2;
+    }
+
+    .float-act-btn {
+      width: 27px;
+      height: 27px;
+      border-radius: 9px;
+      background: rgba(15, 12, 20, 0.74);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.74rem;
+      transition: var(--transition-fast);
+      backdrop-filter: blur(4px);
+    }
+
+    .float-act-btn:hover, .float-act-btn.active {
+      background: var(--accent-rose);
+      border-color: var(--accent-rose);
+      color: #fff;
+    }
+
+    .prod-meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+      margin-bottom: 3px;
+    }
+
+    .prod-brand {
+      font-size: 0.67rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .prod-cat-label {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .prod-title {
+      font-size: 0.81rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.35;
+      height: 2.7em;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .products-grid.cols-4 .prod-title {
+      font-size: 0.7rem;
+    }
+
+    .prod-price-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .prod-price {
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: var(--accent-rose);
+    }
+
+    .prod-old-price {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      font-weight: 600;
+    }
+
+    .btn-add-prod {
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent-rose) 0%, #cf2667 100%);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+    }
+
+    .btn-add-prod:hover {
+      filter: brightness(1.07);
+    }
+
+    .btn-add-prod:active {
+      transform: scale(0.97);
+    }
+
+    .products-grid.cols-4 .btn-add-prod {
+      padding: 6px 6px;
+      font-size: 0.68rem;
+    }
+
+    .load-more-wrap {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-load-more {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-highlight);
+      border-radius: 999px;
+      padding: 10px 24px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-fast);
+    }
+
+    .btn-load-more:hover {
+      background: var(--accent-rose-soft);
+      transform: translateY(-1px);
+    }
+
+    .load-more-info {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 700;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      background: var(--bg-card);
+      border: 1px dashed var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px 18px;
+      text-align: center;
+      color: var(--text-secondary);
+    }
+
+    .empty-state i {
+      font-size: 2.2rem;
+      color: var(--accent-rose);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    /* بطاقة تعريف الكوافير والطلب المخصص */
+    .salon-showcase {
+      max-width: 1280px;
+      margin: 6px auto 16px;
+      padding: 0 14px;
+    }
+
+    .salon-card-box {
+      background: linear-gradient(135deg, rgba(255, 77, 141, 0.12) 0%, var(--bg-card) 55%, rgba(245, 185, 66, 0.12) 100%);
+      border: 1px solid var(--border-highlight);
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .salon-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .salon-title {
+      font-size: 0.98rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 4px;
+    }
+
+    .salon-title i {
+      color: var(--accent-gold);
+    }
+
+    .salon-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+    }
+
+    .salon-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* الشريط السفلي الثابت */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 95;
+      background: var(--bg-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    }
+
+    .nav-btn {
+      position: relative;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      padding: 4px 10px;
+      border-radius: var(--radius-md);
+      transition: var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .nav-btn i {
+      font-size: 1.05rem;
+    }
+
+    .nav-btn.active, .nav-btn:hover {
+      color: var(--accent-rose);
+    }
+
+    .nav-btn .nav-badge {
+      position: absolute;
+      top: 1px;
+      right: 6px;
+      min-width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: var(--accent-gold);
+      color: #161004;
+      font-size: 0.62rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+    }
+
+    /* النوافذ المنبثقة (Modals) */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 4, 10, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    @media (min-width: 640px) {
+      .modal-backdrop {
+        align-items: center;
+        padding: 18px;
+      }
+    }
+
+    .modal-sheet {
+      width: 100%;
+      max-width: 540px;
+      max-height: 88vh;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.45);
+      animation: slideUp 0.24s ease-out;
+    }
+
+    @media (min-width: 640px) {
+      .modal-sheet {
+        border-radius: var(--radius-xl);
+      }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(24px); opacity: 0.6; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-head {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .modal-title {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .close-modal-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .close-modal-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--border-highlight);
+    }
+
+    .modal-body {
+      padding: 14px 16px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .modal-foot {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+    }
+
+    .detail-hero-img {
+      height: 195px;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .detail-hero-img img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .option-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0 14px;
+    }
+
+    .option-chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .option-chip.selected {
+      background: var(--accent-rose-soft);
+      border-color: var(--accent-rose);
+      color: var(--text-primary);
+    }
+
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 8px 0 14px;
+    }
+
+    .features-list li {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+    }
+
+    .features-list li i {
+      color: var(--accent-emerald);
+      margin-top: 4px;
+      font-size: 0.75rem;
+    }
+
+    .cart-item-row {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .qty-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 2px 6px;
+    }
+
+    .qty-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-weight: 800;
+      cursor: pointer;
+      width: 22px;
+      height: 22px;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 9px 12px;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--accent-rose);
+    }
+
+    .btn-whatsapp-confirm {
+      width: 100%;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 11px 14px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 6px 18px rgba(34, 197, 94, 0.28);
+    }
+
+    /* إشعار عائم Toast */
+    .toast-banner {
+      position: fixed;
+      top: 116px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-16px);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--accent-rose);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      z-index: 300;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-card);
+      white-space: nowrap;
+    }
+
+    .toast-banner.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط الإعلانات العلوي -->
+  <div class="top-announcement">
+    <button class="badge-pill" onclick="resetStoreHome()"><i class="fa-solid fa-crown"></i> صبايا إب</button>
+    <div class="offer-text" id="announcementText">كوافير ومكملات وشي إن وعناية بالبشرة وعطور — تجهيز سريع في إب</div>
+    <button class="badge-pill" style="background: var(--accent-rose); color: #fff;" onclick="openCustomOrderModal()">طلب خاص</button>
+  </div>
+
+  <!-- الهيدر الزجاجي -->
+  <header class="site-header">
+    <div class="header-top-row">
+      <button class="brand-logo" onclick="resetStoreHome()" title="الرئيسية">
+        <div class="brand-emblem">
+          <div class="brand-emblem-inner">
+            <i class="fa-solid fa-wand-sparkles sparkle-mini"></i>
+            <i class="fa-solid fa-gem"></i>
+          </div>
+        </div>
+        <div class="brand-text-wrap">
+          <div class="brand-name">صبايا إب</div>
+          <div class="brand-tagline">
+            <i class="fa-solid fa-sparkles"></i>
+            <span>كوافير • مكملات • ستايل شي إن</span>
+          </div>
+        </div>
+      </button>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggleBtn" onclick="toggleThemeMode()" title="تبديل الوضع الليلي والنهاري" aria-label="تبديل الوضع الليلي والنهاري">
+          <i class="fa-solid fa-sun" id="themeIcon"></i>
+        </button>
+        <button class="icon-btn" onclick="openCustomOrderModal()" title="طلب خاص أو منتج شي إن" aria-label="طلب خاص">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </button>
+        <button class="icon-btn" onclick="openFavoritesModal()" title="المفضلة" aria-label="المفضلة">
+          <i class="fa-regular fa-heart"></i>
+          <span class="mini-badge" id="favCountBadge">0</span>
+        </button>
+        <button class="icon-btn" onclick="openCartModal()" title="سلة المشتريات" aria-label="سلة المشتريات">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="mini-badge" id="headerCartBadge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- شريط البحث الفوري -->
+    <div class="search-bar">
+      <i class="fa-solid fa-search"></i>
+      <input type="text" id="searchInput" placeholder="ابحثي عن مكمل غذائي، عناية شعر، منتج شي إن، بشرة، أو عطر..." oninput="handleSearchOrFilterChange()" />
+      <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" title="مسح البحث" aria-label="مسح البحث">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- بنر العروض المتحرك -->
+  <section class="hero-section">
+    <div class="hero-carousel">
+      <div class="hero-track" id="heroTrack">
+        <div class="hero-slide">
+          <div class="hero-content">
+            <div class="hero-kicker"><i class="fa-solid fa-scissors"></i> ركن الكوافير والتجميل</div>
+            <h1 class="hero-title">جمالك يبدأ من <span class="gold">صبايا إب</span></h1>
+            <p class="hero-sub">أجهزة تصفيف، عناية بالشعر والبشرة، وعطور وإكسسوارات مختارة لتألق يومي ومناسبات مميزة.</p>
+            <div class="hero-cta-row">
+              <button class="btn-primary-glow" onclick="selectCategoryByName('الكوافير والعناية')">
+                <i class="fa-solid fa-sparkles"></i> تصفح الكوافير
+              </button>
+              <button class="btn-ghost-gold" onclick="openCustomOrderModal()">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> طلب خاص
+              </button>
+            </div>
+          </div>
+          <div class="hero-visual"><i class="fa-solid fa-spa"></i></div>
+        </div>
+
+        <div class="hero-slide">
+          <div class="hero-content">
+            <div class="hero-kicker"><i class="fa-solid fa-pills"></i> قسم المكملات الغذائية (فايتالي)</div>
+            <h2 class="hero-title">حيوية ونشاط و<span class="gold">عناية متكاملة</span></h2>
+            <p class="hero-sub">مجموعة متكاملة من فيتامينات، أوميغا 3، كولاجين، بروبيوتيك، ومعادن ومكملات الطاقة والهضم.</p>
+            <div class="hero-cta-row">
+              <button class="btn-primary-glow" onclick="selectCategoryByName('المكملات الغذائية')">
+                <i class="fa-solid fa-capsules"></i> تصفح المكملات
+              </button>
+            </div>
+          </div>
+          <div class="hero-visual"><i class="fa-solid fa-heart-pulse"></i></div>
+        </div>
+
+        <div class="hero-slide">
+          <div class="hero-content">
+            <div class="hero-kicker"><i class="fa-solid fa-shirt"></i> تشكيلة منتجات شي إن</div>
+            <h2 class="hero-title">أزياء وإكسسوارات <span class="gold">عصرية أنيقة</span></h2>
+            <p class="hero-sub">100 منتج متنوع من تشكيلة شي إن بلمسة شبابية أنيقة تناسب إطلالاتك اليومية والسهرات.</p>
+            <div class="hero-cta-row">
+              <button class="btn-primary-glow" onclick="selectCategoryByName('منتجات شي إن')">
+                <i class="fa-solid fa-bag-shopping"></i> منتجات شي إن
+              </button>
+            </div>
+          </div>
+          <div class="hero-visual"><i class="fa-solid fa-gem"></i></div>
+        </div>
+      </div>
+
+      <div class="hero-dots" id="heroDots">
+        <button class="hero-dot active" onclick="goToHeroSlide(0)" aria-label="شريحة 1"></button>
+        <button class="hero-dot" onclick="goToHeroSlide(1)" aria-label="شريحة 2"></button>
+        <button class="hero-dot" onclick="goToHeroSlide(2)" aria-label="شريحة 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- شريط الأقسام -->
+  <nav class="categories-wrapper" aria-label="أقسام المتجر">
+    <div class="categories-bar" id="categoriesBar">
+      <button class="cat-pill active" data-cat="الكل" onclick="selectCategory('الكل', this)">
+        <i class="fa-solid fa-border-all"></i> الكل
+      </button>
+      <button class="cat-pill" data-cat="الكوافير والعناية" onclick="selectCategory('الكوافير والعناية', this)">
+        <i class="fa-solid fa-scissors"></i> الكوافير والعناية
+      </button>
+      <button class="cat-pill" data-cat="المكملات الغذائية" onclick="selectCategory('المكملات الغذائية', this)">
+        <i class="fa-solid fa-pills"></i> المكملات الغذائية
+      </button>
+      <button class="cat-pill" data-cat="منتجات شي إن" onclick="selectCategory('منتجات شي إن', this)">
+        <i class="fa-solid fa-shirt"></i> منتجات شي إن
+      </button>
+      <button class="cat-pill" data-cat="العناية بالبشرة" onclick="selectCategory('العناية بالبشرة', this)">
+        <i class="fa-solid fa-face-smile-beam"></i> العناية بالبشرة
+      </button>
+      <button class="cat-pill" data-cat="العطور والإكسسوارات" onclick="selectCategory('العطور والإكسسوارات', this)">
+        <i class="fa-solid fa-gem"></i> العطور والإكسسوارات
+      </button>
+    </div>
+  </nav>
+
+  <!-- شريط معلومات المتجر، الفرز، وتغيير الأعمدة -->
+  <div class="toolbar-strip">
+    <div class="store-branch-info">
+      <span class="branch-badge">
+        <i class="fa-solid fa-store"></i>
+        <span>صبايا إب • كوافير ومتجر</span>
+      </span>
+      <span class="products-counter" id="productsCountLabel">عرض المنتجات</span>
+    </div>
+
+    <div class="toolbar-controls">
+      <select class="sort-select" id="sortSelect" onchange="handleSearchOrFilterChange()" aria-label="ترتيب المنتجات">
+        <option value="default">الترتيب الافتراضي</option>
+        <option value="price-asc">السعر: من الأقل للأعلى</option>
+        <option value="price-desc">السعر: من الأعلى للأقل</option>
+      </select>
+
+      <button class="layout-cycle-btn" id="layoutBtn" onclick="cycleGridLayout()" title="تغيير عدد الأعمدة">
+        <i class="fa-solid fa-table-cells-large" id="layoutIcon"></i>
+        <span id="layoutLabel">2 أعمدة</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- شبكة المنتجات والتحميل التدريجي السريع -->
+  <main class="products-section">
+    <div class="products-grid" id="productsGrid"></div>
+    <div class="load-more-wrap" id="loadMoreWrap" style="display: none;">
+      <div class="load-more-info" id="loadMoreInfo"></div>
+      <button class="btn-load-more" id="loadMoreBtn" onclick="loadMoreProducts()">
+        <i class="fa-solid fa-angles-down"></i>
+        <span>عرض المزيد من المنتجات</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- بطاقة تعريف الكوافير والطلب المخصص -->
+  <section class="salon-showcase">
+    <div class="salon-card-box">
+      <div class="salon-header">
+        <div>
+          <div class="salon-title">
+            <i class="fa-solid fa-crown"></i>
+            <span>كوافير صبايا إب — خدمة سريعة وطلبات خاصة</span>
+          </div>
+          <p class="salon-desc">
+            هل أعجبك منتج من شي إن أو مكمل غذائي أو مستحضر عناية وتريدين طلبه أو الاستفسار عنه؟ تواصلي معنا مباشرة عبر الواتساب.
+          </p>
+        </div>
+        <div class="salon-actions">
+          <button class="btn-primary-glow" onclick="openCustomOrderModal()">
+            <i class="fa-solid fa-pen-to-square"></i> نموذج طلب مخصص
+          </button>
+          <a class="btn-ghost-gold" href="https://wa.me/967777502849?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B5%D8%A8%D8%A7%D9%8A%D8%A7%20%D8%A5%D8%A8%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> واتساب صبايا إب
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الشريط السفلي الثابت -->
+  <nav class="bottom-nav" aria-label="التنقل السفلي">
+    <button class="nav-btn active" id="navHomeBtn" onclick="resetStoreHome()">
+      <i class="fa-solid fa-house"></i>
+      <span>الرئيسية</span>
+    </button>
+    <button class="nav-btn" onclick="openCustomOrderModal()">
+      <i class="fa-solid fa-sparkles"></i>
+      <span>طلب خاص</span>
+    </button>
+    <a class="nav-btn" href="https://wa.me/967777502849" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>واتساب</span>
+    </a>
+    <button class="nav-btn" id="navCartBtn" onclick="openCartModal()">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span>السلة</span>
+      <span class="nav-badge" id="bottomCartBadge">0</span>
+    </button>
+  </nav>
+
+  <!-- نافذة تفاصيل المنتج -->
+  <div class="modal-backdrop" id="detailModal" onclick="backdropClose(event, 'detailModal')">
+    <div class="modal-sheet">
+      <div class="modal-head">
+        <span class="modal-title" id="detailModalTitle">تفاصيل المنتج</span>
+        <button class="close-modal-btn" onclick="closeModal('detailModal')" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="detailModalBody"></div>
+      <div class="modal-foot" id="detailModalFoot"></div>
+    </div>
+  </div>
+
+  <!-- نافذة السلة -->
+  <div class="modal-backdrop" id="cartModal" onclick="backdropClose(event, 'cartModal')">
+    <div class="modal-sheet">
+      <div class="modal-head">
+        <span class="modal-title"><i class="fa-solid fa-bag-shopping" style="color: var(--accent-rose);"></i> سلة مشتريات صبايا إب</span>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button class="close-modal-btn" onclick="clearCart()" title="إفراغ السلة" style="color: #ff6b81;"><i class="fa-solid fa-trash-can"></i></button>
+          <button class="close-modal-btn" onclick="closeModal('cartModal')" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+      <div class="modal-body" id="cartModalBody"></div>
+      <div class="modal-foot" id="cartModalFoot"></div>
+    </div>
+  </div>
+
+  <!-- نافذة المفضلة -->
+  <div class="modal-backdrop" id="favModal" onclick="backdropClose(event, 'favModal')">
+    <div class="modal-sheet">
+      <div class="modal-head">
+        <span class="modal-title"><i class="fa-solid fa-heart" style="color: var(--accent-rose);"></i> المنتجات المفضلة</span>
+        <button class="close-modal-btn" onclick="closeModal('favModal')" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="favModalBody"></div>
+    </div>
+  </div>
+
+  <!-- نافذة الطلب المخصص -->
+  <div class="modal-backdrop" id="customOrderModal" onclick="backdropClose(event, 'customOrderModal')">
+    <div class="modal-sheet">
+      <div class="modal-head">
+        <span class="modal-title"><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-gold);"></i> طلب خاص — صبايا إب</span>
+        <button class="close-modal-btn" onclick="closeModal('customOrderModal')" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 12px;">
+          اكتبي اسم المنتج أو كود/مواصفات منتج شي إن أو المكمل الغذائي أو خدمة الكوافير المطلوبة لإرسالها مباشرة عبر الواتساب.
+        </p>
+        <label style="font-size: 0.76rem; font-weight: 700; display: block; margin-bottom: 4px;">نوع الطلب</label>
+        <select class="form-select" id="customType">
+          <option value="منتج من تشكيلة شي إن">منتج من تشكيلة شي إن</option>
+          <option value="مكمل غذائي / فيتامينات">مكمل غذائي / فيتامينات</option>
+          <option value="عناية وخدمات كوافير صبايا إب">عناية وخدمات كوافير صبايا إب</option>
+          <option value="عناية بالبشرة">عناية بالبشرة</option>
+          <option value="عطور وإكسسوارات">عطور وإكسسوارات</option>
+        </select>
+
+        <label style="font-size: 0.76rem; font-weight: 700; display: block; margin-bottom: 4px;">اسم المنتج أو التفاصيل / المقاس / اللون</label>
+        <input type="text" class="form-input" id="customDetails" placeholder="مثال: فستان ناعم مقاس M أو أوميغا 3 أو سيروم شعر..." />
+
+        <label style="font-size: 0.76rem; font-weight: 700; display: block; margin-bottom: 4px;">ملاحظات إضافية (اختياري)</label>
+        <input type="text" class="form-input" id="customNotes" placeholder="الحي / المنطقة أو ملاحظات أخرى..." />
+
+        <button class="btn-whatsapp-confirm" onclick="submitCustomWhatsAppOrder()">
+          <i class="fa-brands fa-whatsapp"></i> إرسال الطلب عبر الواتساب
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- إشعار سريع -->
+  <div class="toast-banner" id="toastBanner"></div>
+
+  <script>
+const STORE_CONFIG = {
+      storeName: "صبايا إب",
+      whatsappNumber: "967777502849",
+      currency: "ر.ي",
+      pageSize: 24
+    };
+const PRODUCTS = [{"id":1,"brand":"NOW Foods","name":"Biotin 10 mg","price":6796,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجمال","badge":"الجمال","img":"https://i.postimg.cc/7Z4m81Sk/1000019024-cutout.png","options":["عبوة أصلية"],"features":["يدعم نمو الشعر وصحة البشرة والأظافر","يعزز عملية التمثيل الغذائي وإنتاج الطاقة","تركيبة نباتية عالية الجودة سريعة الامتصاص"]},{"id":2,"brand":"NOW Foods","name":"مكمل Repair Gold، عدد 60 كبسولة","price":6796,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/MGrMVbvN/1000019123-Photoroom.png","options":["عبوة أصلية"],"features":["يحتوي على إنزيمات هاضمة عالية القوة","يساعد في تخفيف وتسكين آلام العضلات والمفاصل","يعزز التعافي السريع للجسم بعد المجهود البدني"]},{"id":3,"brand":"California Gold","name":"Omega-3 Premium Fish Oil","price":8500,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/Hs4rBCJT/1000019125-Photoroom.png","options":["عبوة أصلية"],"features":["يدعم صحة القلب والأوعية الدموية","يحسن وظائف الدماغ والتركيز والذاكرة","زيت سمك نقي مكرر ومقطر جزيئياً"]},{"id":4,"brand":"Garden of Life","name":"Raw Probiotics Once Daily","price":14200,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/pLhBmTGm/1000019124-Photoroom.png","options":["عبوة أصلية"],"features":["يدعم صحة الجهاز الهضمي والمناعة","يحتوي على بكتيريا نافعة حية ومتنوعة","كبسولة واحدة يومياً لسهولة الاستخدام"]},{"id":5,"brand":"Nature's Bounty","name":"Vitamin D3 5000 IU","price":4500,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/x16S16ZY/1000019126-Photoroom.png","options":["عبوة أصلية"],"features":["يعزز امتصاص الكالسيوم لصحة العظام والأسنان","يدعم الجهاز المناعي ووظائف الأعصاب","سهل البلع وسريع الذوبان"]},{"id":6,"brand":"Solgar","name":"Skin, Nails & Hair Advanced","price":11200,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجمال","badge":"الجمال","img":"https://i.postimg.cc/JnfQ1H9x/1000019127-Photoroom.png","options":["عبوة أصلية"],"features":["تركيبة متقدمة لتغذية الجمال الداخلي","يحتوي على الزنك والنحاس وفيتامين سي","يحفز إنتاج الكولاجين الطبيعي"]},{"id":7,"brand":"Optimum Nutrition","name":"Gold Standard BCAA Energy","price":13500,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/c4QXkbJy/1000019605-Photoroom.png","options":["عبوة أصلية"],"features":["يعزز طاقة الجسم والتركيز الذهني","يمنع هدم العضلات أثناء التمارين","مزيج منعش ولذيذ الطعم"]},{"id":8,"brand":"Life Extension","name":"Two-Per-Day Multivitamin","price":9800,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/yxRvHfXZ/1000019606-Photoroom.png","options":["عبوة أصلية"],"features":["فيتامينات متعددة عالية الفعالية","مضادات أكسدة قوية لصحة الخلايا","يدعم الحيوية والنشاط اليومي العام"]},{"id":9,"brand":"Doctor's Best","name":"High Absorption Magnesium 100%","price":7900,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/5tPPqQ2W/1000019608-Photoroom.png","options":["عبوة أصلية"],"features":["يدعم استرخاء العضلات والجهاز العصبي","يحسن جودة النوم ويقلل الإجهاد","شكل عالي الامتصاص وغير مزعج للمعدة"]},{"id":10,"brand":"NOW Foods","name":"Super Enzymes Digest Formula","price":6200,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/sfMLmmSR/1000019607-Photoroom.png","options":["عبوة أصلية"],"features":["يحتوي على البيتين والبانكرياتين","يحسن هضم البروتينات والدهون والكربوهيدرات","يخفف الانتفاخ والغازات بعد الوجبات"]},{"id":11,"brand":"California Gold","name":"Vitamin C Gummies 250mg","price":5500,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/90srHbXY/1000019613-Photoroom.png","options":["عبوة أصلية"],"features":["مضاد أكسدة قوي يدعم المناعة","مضغوطات هلامية بنكهة الفواكه الطبيعية","مناسب للكبار والصغار"]},{"id":12,"brand":"Source Naturals","name":"Wellness Formula, Bio-Aligned","price":10500,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/VLYY52p9/1000019615-Photoroom.png","options":["عبوة أصلية"],"features":["دعم مناعي شامل متعدد الأعشاب","يحتوي على الفيتامينات والمعادن ومستخلصات نباتية","يحمي الجسم في مواسم تغير الطقس"]},{"id":13,"brand":"Vital Proteins","name":"Collagen Peptides Powder","price":18000,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجمال","badge":"الجمال","img":"https://i.postimg.cc/6328jFtJ/1000019614-Photoroom.png","options":["عبوة أصلية"],"features":["يدعم مرونة البشرة وشبابها","يقوي الأظافر والشعر والمفاصل","سهل الذوبان في السوائل الباردة أو الساخنة"]},{"id":14,"brand":"Nutricost","name":"B-Complex 100 mg","price":7200,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/rFLDjhbt/1000019617-Photoroom.png","options":["عبوة أصلية"],"features":["مجموعة فيتامينات ب الكاملة لإنتاج الطاقة","يدعم صحة الجهاز العصبي وخلايا الدم الحمراء","يقلل الشعور بالإرهاق والتعب"]},{"id":15,"brand":"NOW Foods","name":"CoQ10 100 mg with Hawthorn","price":14900,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/sfWBpFTb/1000019616-Photoroom.png","options":["عبوة أصلية"],"features":["يدعم صحة عضلة القلب وإنتاج الطاقة الخلوية","مضاد أكسدة قوي يحارب الشيخوخة المبكرة","مدعم بخلاصة الزعرور لفائدة مضاعفة"]},{"id":16,"brand":"MegaFood","name":"Blood Builder Iron Supplement","price":11900,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/2Stmcy6v/1000019619-Photoroom.png","options":["عبوة أصلية"],"features":["يعالج نقص الحديد دون الإمساك المعتاد","مصنوع من طعام حقيقي كامل المغذيات","يزيد من مستويات الطاقة والحيوية"]},{"id":17,"brand":"Sports Research","name":"Keto Plus MCT Oil","price":16500,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/zDkNm0vB/1000019618-Photoroom.png","options":["عبوة أصلية"],"features":["يعزز طاقة الكيتو والتركيز الذهني السريع","مستخلص من جوز الهند النقي 100%","يدعم حرق الدهون وصحة الأنسجة"]},{"id":18,"brand":"Now Foods","name":"L-Glutamine 500mg Powder","price":9100,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/x8Q9vZCT/1000019621-Photoroom.png","options":["عبوة أصلية"],"features":["يدعم صحة بطانة الأمعاء وجدار الجهاز الهضمي","يساعد في استشفاء العضلات الرياضية","حمض أميني نقي وسريع الامتصاص"]},{"id":19,"brand":"نوتريوكست","name":"الاداء كرياتين احادي الهيدرات بدون نكهات","price":20000,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/vHf4kB2C/1000019826-Photoroom.png","options":["عبوة أصلية"],"features":["دعم الطاقة السريعة أثناء التمارين القصيرة والعالية الشدة","قدرة التحمل"]},{"id":20,"brand":"كاليفورنيا غولد نيوتريشن","name":"خلاصة البوسويليا مسحوق الكركم","price":15,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/RFQ8WPty/1000020177-Photoroom.png","options":["عبوة أصلية"],"features":["راحة المفاصل ووظيفة الحركة","توازن الاستجابة الالتهابية","مضادات أكسدة نباتية"]},{"id":21,"brand":"ناو فودز","name":"سلسلة المنتجات الرياضية كرياتين مونوهايدريت","price":11,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/L58ynm2X/1000020180-Photoroom.png","options":["عبوة أصلية"],"features":["دعم الطاقة القصيرة المدى","الأداء أثناء التدريب عالي الشدة","قوة وكتلة عضلية خالية من الدهون"]},{"id":22,"brand":"دكتورزبيست","name":"سيرين الفوسفاتيديل، 100ملجم، 120 كبسولة نباتية","price":22,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/mrpLHbFX/1000020196-Photoroom.png","options":["عبوة أصلية"],"features":["الذاكرة والتركيز","الوظيفة الإدراكية العامة","التكيف مع الإجهاد الذهني"]},{"id":23,"brand":"ناو فودز","name":"استيل-ل-كارنيتين، 500ملجم، 100 كبسولة نباتية","price":15000,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/rp99qjyY/1000020216-cutout.png","options":["عبوة أصلية"],"features":["طاقة خلوية","دعم إدراكي عصبي","استقلاب الدهون"]},{"id":24,"brand":"سورس ناتورالز","name":"دعم المناعة المتطور، 120 كبسولة","price":14500,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/SQwdmJ7b/1000020218-cutout.png","options":["عبوة أصلية"],"features":["دعم المناعة العامة","مضادات أكسدة","دعم الحواجز المخاطية والتناغم المناعي"]},{"id":25,"brand":"لايف اكستانشن","name":"يوبيكوينول فائق انزيم 100ملجم، 30 كبسولة هلامية","price":24000,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/zftw6BGv/1000020219-cutout.png","options":["عبوة أصلية"],"features":["طاقة خلوية وميتوكندريا","صحة القلب","مضادات أكسدة"]},{"id":26,"brand":"لايف إكستانشن","name":"العبعب المنوم المحسن، 60 كبسولة نباتية (125 ملجم لكل كبسولة)","price":37,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/dtPYNLNW/1000021912-cutout.png","options":["عبوة أصلية"],"features":["يساعد في إدارة التوتر والإجهاد اليومي","يدعم الهدوء النفسي والتركيز الذهني","كبسولات نباتية عالية الجودة (125 ملجم)"]},{"id":27,"brand":"ناو فودز","name":"حديد، 18 مل، 120 كبسولة نباتية","price":40,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/xdCDNHq9/1000021914-cutout.png","options":["عبوة أصلية"],"features":["معدن أساسي لدعم مستويات الحديد في الدم","تركيبة لطيفة على المعدة ولا تسبب الإمساك (Ferrochel)","120 كبسولة نباتية عالية الامتصاص"]},{"id":28,"brand":"فيتال بروتينز","name":"بيبتيدات الكولاجين، خالٍ من النكهات، 10 أونصة (284 جم)","price":126,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجمال","badge":"الجمال","img":"https://i.postimg.cc/T1nZvJHG/1000021916-cutout.png","options":["عبوة أصلية"],"features":["يدعم نضارة البشرة وقوة الشعر والأظافر","يعزز صحة المفاصل والأربطة (20 جم كولاجين لكل حصة)","خالٍ من النكهات وسريع الذوبان في المشروبات"]},{"id":29,"brand":"ناو فودز","name":"ل-ليسين، 1,000 ملجم، 100 قرص","price":48,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/rFCvhgrg/1000021918-cutout.png","options":["عبوة أصلية"],"features":["حمض أميني أساسي لدعم تصنيع الكولاجين","يعزز وظائف الجهاز المناعي وصحة الأنسجة","تركيز مضاعف 1000 ملجم في كل قرص"]},{"id":30,"brand":"ناو فودز","name":"كولين وإينوزيتول، 100 كبسولة نباتية","price":44,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/sgTbzXKB/1000021920-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الجهاز العصبي ونقل الإشارات العصبية","يساعد في استقلاب الأحماض الدهنية وصحة الكبد","تركيبة نباتية متوازنة (100 كبسولة)"]},{"id":31,"brand":"كاليفورنيا غولد نيوتريشن","name":"الإنزيم المساعد Q10، 100 ملجم، 30 كبسولة هلامية نباتية","price":25,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/0j1BnJ56/1000021923-cutout.png","options":["عبوة أصلية"],"features":["يدعم إنتاج الطاقة الخلوية وصحة القلب","مضاد أكسدة قوي مخمر طبيعياً","30 كبسولة هلامية نباتية سريعة الامتصاص"]},{"id":32,"brand":"نوتريكوست","name":"زياكسانثين مع اللوتين، 120 كبسولة هلامية","price":55,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/8kL35ww0/1000021925-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة العين والرؤية ويحمي من الضوء الأزرق","يحتوي على 20 ملجم لوتين و 4 ملجم زياكسانثين","120 كبسولة هلامية عالية التركيز"]},{"id":33,"brand":"ناو فودز","name":"ل-سيستين، 500 ملجم، 100 قرص","price":60,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجمال","badge":"الجمال","img":"https://i.postimg.cc/cLL5FWWP/1000021927-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة البشرة والشعر والأظافر","حمض أميني بنائي مدعم بفيتامين ب6 وفيتامين سي","100 قرص لتعزيز الكيراتين ومضادات الأكسدة"]},{"id":34,"brand":"ناتورز باونتي","name":"كالسيوم ومغنيسيوم وزنك مع فيتامين د3، 100 كبسولات مغلفة","price":32,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/bvKCY2tM/1000021929-cutout.png","options":["عبوة أصلية"],"features":["تركيبة متكاملة لصحة العظام والأسنان والعضلات","مدعم بفيتامين د3 لزيادة امتصاص الكالسيوم","100 قرص مغلف لسهولة البلع"]},{"id":35,"brand":"كاليفورنيا غولد نيوتريشن","name":"Gummiology، حلوى علكية بمركب فيتامينات B مع فيتاميني B6 و B12 وحمض الفوليك والبيوتين، بنكهة الفراولة، 45 قطعة علكية نباتية","price":32,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/zvk0ktc1/1000021931-cutout.png","options":["عبوة أصلية"],"features":["يدعم إنتاج الطاقة والتمثيل الغذائي","يحتوي على فيتامينات B6 و B12 والبيوتين وحمض الفوليك","حلوى نباتية بنكهة الفراولة اللذيذة وخالية من الجيلاتين"]},{"id":36,"brand":"ليمي","name":"علكات النوم الضيقة، التوت، 60 علكة","price":125,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/nV2Tq9mb/1000021933-cutout.png","options":["عبوة أصلية"],"features":["تساعد على الاسترخاء والنوم العميق والهادئ","مدعمة بالميلاتونين والمغنيسيوم ومستخلصات البابونج والخزامى","60 علكة لذيذة بنكهة التوت الطبيعي"]},{"id":37,"brand":"جارو فورميلاز","name":"فولات الميثيل النباتية صرف، 400 مكجم، 60 كبسولة نباتية","price":41,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/wTB22x5s/1000021935-cutout.png","options":["عبوة أصلية"],"features":["الشكل النشط بيولوجياً من حمض الفوليك لسهولة الامتصاص","يدعم صحة القلب والأوعية الدموية ووظائف الدماغ","60 كبسولة نباتية مناسبة للنباتيين"]},{"id":38,"brand":"نوتريكوست","name":"فيتامين ك 2 + فيتامين د 3، 120 كبسولة هلامية","price":55,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/KcfQt3Th/1000021937-cutout.png","options":["عبوة أصلية"],"features":["يعزز امتصاص الكالسيوم وتوجيهه للعظام والأسنان","يدعم صحة القلب والشرايين والجهاز المناعي","تركيبة مزدوجة فعالة (125 مكجم د3 + 100 مكجم ك2)"]},{"id":39,"brand":"ناو فودز","name":"فيتامين أ، 3000 مكجم (10,000 وحدة دولية)، 100 كبسولة هلامية","price":21,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/VvZjpM95/1000021939-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة العين والرؤية السليمة","يعزز صحة الجلد والأغشية المخاطية","يقوي وظائف الجهاز المناعي للجسم"]},{"id":40,"brand":"لايف إكستانشن","name":"جليسينات المغنيسيوم، 90 كبسولة نباتية (105 ملجم لكل كبسولة)","price":68,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/QtbggvF3/1000021941-cutout.png","options":["عبوة أصلية"],"features":["مغنيسيوم عالي الامتصاص ولطيف على المعدة","يدعم استرخاء العضلات وصحة الجهاز العصبي والقلب","يساعد في تحسين جودة النوم وتقليل التوتر"]},{"id":41,"brand":"ناو فودز","name":"جليسين، 100% مسحوق نقي، 1 رطل (454 جم)","price":89,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/tCW2MvZV/1000022261-cutout.png","options":["عبوة أصلية"],"features":["حمض أميني نقي يدعم صحة الجهاز العصبي والنوم المريح","يساهم في تصنيع الكولاجين والجلوتاثيون في الجسم","مسحوق نقي 100% بدرجة صيدلانية وسريع الذوبان"]},{"id":42,"brand":"كاليفورنيا غولد نيوتريشن","name":"بروبيوتك 65 LactoBif، 65 مليار وحدة تشكيل مستعمرة، 30 كبسولة نباتية","price":96,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/j23zmN6D/1000021945-cutout.png","options":["عبوة أصلية"],"features":["يحتوي على 20 سلالة نشطة من البكتيريا النافعة (65 مليار CFU)","يعزز صحة الجهاز الهضمي وتوازن البكتيريا المعوية","لا يتطلب التبريد ومغلف بشكل فردي للحفاظ على الفعالية"]},{"id":43,"brand":"ناو فودز","name":"ل-تيروسين، 500 ملجم، 120 كبسولة","price":48,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/rsZS3WGK/1000021949-cutout.png","options":["عبوة أصلية"],"features":["يدعم اليقظة الذهنية والتركيز وصفاء الذهن","يساهم في إنتاج النواقل العصبية ووظائف الغدة الدرقية","يساعد الجسم على التكيف مع الإجهاد الذهني"]},{"id":44,"brand":"ناتشورز واي","name":"Alive! أقراص متعدد فيتامينات ممتاز للمضغ للأطفال، بنكهات الكرز والبرتقال والعنب، 60 قرصاً للمضغ","price":44,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/cCkQ2Y7k/1000021951-cutout.png","options":["عبوة أصلية"],"features":["فيتامينات متعددة متكاملة لدعم نمو ومناعة الأطفال","مدعم بمزيج الفواكه والخضروات الطبيعية","علكات نباتية لذيذة بنكهات الكرز والبرتقال والعنب"]},{"id":45,"brand":"ناو فودز","name":"سيلينيوم، 100 مكجم، 100 قرص","price":21,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/g2HvbfKk/1000021953-cutout.png","options":["عبوة أصلية"],"features":["معدن أساسي يدعم صحة الغدة الدرقية والمناعة","يعمل كمضاد أكسدة قوي لحماية الخلايا من الجذور الحرة","100 قرص نباتي خالٍ من الخميرة"]},{"id":46,"brand":"دكتورز بيست","name":"فيتامين ب المركب النشط كلياً مع الكواترفوليك، 30 كبسولة نباتية","price":40,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/G3XJ4w00/1000021955-cutout.png","options":["عبوة أصلية"],"features":["يحتوي على فيتامينات ب بأشكالها النشطة بيولوجياً لامتصاص فائق","يدعم إنتاج الطاقة وصحة الجهاز العصبي والتمثيل الغذائي","مدعم بحمض الفوليك النشط Quatrefolic"]},{"id":47,"brand":"نيوسيل","name":"بيبتيدات الكولاجين من أبقار تغذت على الأعشاب + فيتامين ج وبيوتين، 270 قرصاً","price":95,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجمال","badge":"الجمال","img":"https://i.postimg.cc/3Jmncf4X/1000021957-cutout.png","options":["عبوة أصلية"],"features":["يعزز مرونة البشرة ويقوي الشعر والأظافر والمفاصل","مدعم بفيتامين ج لتحفيز إنتاج الكولاجين والبيوتين لدعم الجمال","6000 ملجم كولاجين لكل حصة من أبقار تغذت على الأعشاب"]},{"id":48,"brand":"نوتريكوست","name":"حمض البوريك، للنساء، 600 ملجم، 60 كبسولة","price":30,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/28h2K9bV/1000021959-cutout.png","options":["عبوة أصلية"],"features":["يدعم التوازن الطبيعي وصحة المرأة (تحاميل مهبلية 600 ملجم)","يساعد في الحفاظ على درجة الحموضة الطبيعية الصحية","60 كبسولة عالية النقاء والجودة"]},{"id":49,"brand":"ناو فودز","name":"600، KSM-66 Ashwagandha ملجم، 90 كبسولة نباتية","price":86,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/Jh6qk9vr/1000021961-cutout.png","options":["عبوة أصلية"],"features":["خلاصة جذور الأشواغاندا النقية عالية التركيز KSM-66","يساعد في تخفيف التوتر اليومي وتحسين المزاج والنوم الهادئ","90 كبسولة نباتية مثبتة سريرياً"]},{"id":50,"brand":"ناو فودز","name":"فيتامين ب-12، 100 قرص استحلاب","price":26,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/C5C28w81/1000022265-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الجهاز العصبي وإنتاج الطاقة الخلوية","تركيز 1,000 مكجم مدعم بحمض الفوليك","100 قرص استحلاب سريع الذوبان والامتصاص"]},{"id":51,"brand":"كاليفورنيا غولد نيوتريشن","name":"غذاء فائق القيمة الغذائية، زيت جوز الهند البكر العضوي المعصور على البارد، 16 أونصة سائلة (473 مل)","price":59,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/zB4FdTq2/1000021965-cutout.png","options":["عبوة أصلية"],"features":["زيت جوز هند عضوي بكر معصور على البارد بدون تكرير","غني بالدهون الثلاثية متوسطة السلسلة (MCTs) للطاقة","مناسب للطهي الصحي وللعناية الطبيعية بالبشرة والشعر"]},{"id":52,"brand":"دكتور موراي","name":"Theracurmin Super، كركمين ذو قوة سريرية، 60 كبسولة نباتية","price":107,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/QM4bTRPP/1000021967-cutout.png","options":["عبوة أصلية"],"features":["كركمين عالي الامتصاص بتقنية متطورة لدعم صحة المفاصل","مضاد أكسدة قوي يدعم الاستجابة الالتهابية الصحية في الجسم","60 كبسولة نباتية بتركيز 375 ملجم"]},{"id":53,"brand":"كاليفورنيا غولد نيوتريشن","name":"ل-جلوتاثيون (مختزل)، 500 ملجم، 30 كبسولة نباتية","price":46,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجمال","badge":"الجمال","img":"https://i.postimg.cc/8CKH6q9V/1000021969-cutout.png","options":["عبوة أصلية"],"features":["مضاد أكسدة رئيسي يدعم نضارة البشرة وتفتيحها الطبيعي","يعزز صحة الكبد ويساعد في إزالة السموم من الجسم","500 ملجم من الجلوتاثيون المختزل النشط في كل كبسولة"]},{"id":54,"brand":"لايف إكستانشن","name":"أقراص Two-Per-Day، 60 قرص","price":47,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/vHFvf7qQ/1000021971-cutout.png","options":["عبوة أصلية"],"features":["فيتامينات ومعادن متعددة عالية الفعالية لدعم الصحة اليومية","يحتوي على مضادات أكسدة قوية ومغذيات نشطة بيولوجياً","60 قرصاً تكفي لمدة شهر كامل"]},{"id":55,"brand":"فيوتشربيوتيكس","name":"فيتامين ك 2 + د 3 ، 60 كبسولة","price":28,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/256dr06d/1000021973-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة العظام القوية (فيتامين ك2 MK-7 مع فيتامين د3)","يعزز صحة القلب والأوعية الدموية","خالٍ من الغلوتين والصويا، 60 كبسولة"]},{"id":56,"brand":"ناو فودز","name":"زيت سمك معزز بأوميغا-3، 100 كبسولة هلامية","price":37,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/L8mB09M1/1000021975-cutout.png","options":["عبوة أصلية"],"features":["مقطر جزيئياً لدعم صحة القلب والأوعية الدموية","يحتوي على EPA و DHA لدعم الدماغ والنشاط العام","100 كبسولة هلامية سهلة البلع"]},{"id":57,"brand":"لايف إكستانشن","name":"Super Omega-3، 60 كبسولة هلامية","price":69,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/C5ybCY42/1000021977-cutout.png","options":["عبوة أصلية"],"features":["مزيج متطور من أوميغا-3 مع قشور السمسم وخلاصة الزيتون","يدعم صحة القلب والأوعية الدموية والدماغ والمناعة","60 كبسولة هلامية معتمدة النقاء"]},{"id":58,"brand":"سوانسون فيتامينز","name":"بيكولينات الزنك ، 22 ملجم ، 60 كبسولة","price":16,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/5NVw64y2/1000021979-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الجهاز المناعي والنشاط الخلوي","زنك بيكولينات 22 ملجم عالي الامتصاص","60 كبسولة نباتية مناسبة للنباتيين"]},{"id":59,"brand":"ليمي","name":"الخرخرة ، علكات البروبيوتيك المهبلية ، الأناناس ، 60 علكة","price":124,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/yYHFk1x9/1000021982-cutout.png","options":["عبوة أصلية"],"features":["مدعمة بالبروبيوتيك المدروس سريرياً وفيتامين ج","تدعم التوازن الطبيعي وصحة المرأة اليومية","60 علكة بنكهة الأناناس اللذيذة"]},{"id":60,"brand":"كاليفورنيا غولد نيوتريشن","name":"مركب فيتامينات ب المعزز بالفولات والبيوتين وحمض البانتوثنيك وفيتامين ب6، 60 كبسولة نباتية","price":42,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/dtjGCbZ9/1000021984-cutout.png","options":["عبوة أصلية"],"features":["مجموعة متكاملة من فيتامينات ب لدعم الطاقة والتمثيل الغذائي","مدعم بالفولات النشط Magnafolate والبيوتين وفيتامين ب6","60 كبسولة نباتية خالية من الغلوتين والصويا"]},{"id":61,"brand":"نورديك ناتورالز","name":"للمراهقين، زيت السمك Ultimate Omega®، من عمر 12 عامًا فأكبر، نكهة الفراولة، 60 كبسولة هلامية صغيرة","price":139,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/NfkRX32d/1000021986-cutout.png","options":["عبوة أصلية"],"features":["يدعم بنية ووظائف خلايا الدماغ والتركيز للمراهقين","يوفر 1120 ملجم أوميغا-3 لكل جرعة من كبسولتين صغيرتين","بنكهة الفراولة الطبيعية وسهلة البلع (من عمر 12+)"]},{"id":62,"brand":"دكتورز بيست","name":"لوتين ، 60 كبسولة هلامية","price":41,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/tCW2MvZV/1000022261-cutout.png","options":["عبوة أصلية"],"features":["يدعم الوظيفة البصرية وصحة العين والعدسة","يحتوي على 20 ملجم لوتين نقي في كل كبسولة","60 كبسولة هلامية عالية الجودة"]},{"id":63,"brand":"كاليفورنيا غولد نيوتريشن","name":"بروبيوتيك 100 LactoBif®، 100 مليار وحدة تشكيل مستعمرة، 60 كبسولة نباتية","price":201,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/L80YB24S/1000021988-cutout.png","options":["عبوة أصلية"],"features":["يحتوي على 8 سلالات نشطة من البكتيريا النافعة (100 مليار CFU)","يعزز صحة الجهاز الهضمي والمناعة المعوية","لا يحتاج إلى تبريد ومغلف بشكل فردي للحفاظ على الفعالية"]},{"id":64,"brand":"كاليفورنيا غولد نيوتريشن","name":"بربرين متطور، فيتوسوم بربيفيس، 550 ملجم، 60 كبسولة نباتية","price":98,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/dVSkmwsf/1000021992-cutout.png","options":["عبوة أصلية"],"features":["بربرين بتقنية الفيتوسوم Berbevis لتعزيز الامتصاص والفعالية","يدعم التمثيل الغذائي والصحة العامة وتوازن السكر","60 كبسولة نباتية بتركيز 550 ملجم"]},{"id":65,"brand":"كاليفورنيا غولد نيوتريشن","name":"بيكولينات الزنك، 50 ملجم، 120 كبسولة نباتية","price":44,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/Sxt27kSW/1000021994-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الجهاز المناعي والنشاط الخلوي","50 ملجم زنك بيكولينات عالي الامتصاص لكل كبسولة","120 كبسولة نباتية خالية من الغلوتين والصويا"]},{"id":66,"brand":"ناو فودز","name":"ميلاتونين، 3 ملجم، 60 كبسولة نباتية","price":18,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/65WykyT1/1000021998-cutout.png","options":["عبوة أصلية"],"features":["يدعم دورة النوم الصحية والراحة الليلية","يعمل كمضاد للجذور الحرة ويدعم صحة الجهاز الهضمي","60 كبسولة نباتية بتركيز 3 ملجم"]},{"id":67,"brand":"نورديك ناتورالز","name":"كبسولات Ultimate Omega®، بنكهة الليمون، 60 كبسولة هلامية (640 ملجم لكل كبسولة هلامية)","price":114,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/66L8bd6h/1000022000-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة القلب والدماغ والجهاز المناعي","يوفر 1280 ملجم أوميغا-3 لكل جرعة من كبسولتين","بنكهة الليمون الطبيعية، 60 كبسولة هلامية"]},{"id":68,"brand":"ناتشرز واي","name":"Chlorofresh®، كلوروفيل سائل ، نعناع ، 16 أونصة سائلة (480 مل)","price":64,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/jS92nccQ/1000022002-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة البشرة وتنقية الجسم الطبيعية","يوفر 132 ملجم كلوروفيل لكل جرعة بنكهة النعناع المنعشة","عبوة سائلة 480 مل مناسبة للاستخدام اليومي"]},{"id":69,"brand":"كاليفورنيا غولد نيوتريشن","name":"مركب الأستازانتين والكاروتينويد (AstaCarotenoid) المعزز باللوتين والليكوبين والأستازانتين وفيتامين أ، 30 كبسولة هلامية نباتية","price":66,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/T3hhPFVs/1000022004-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة العين والوظائف الخلوية بمضادات الأكسدة","يحتوي على أستازانتين ولوتين وزياكسانثين وبيتا كاروتين","30 كبسولة هلامية نباتية عالية الجودة"]},{"id":70,"brand":"نورديك ناتورالز","name":"Children's DHA™، للأطفال بعمر سنة فأكبر، بنكهة الفراولة، 4 أونصات سائلة، (119 مل)","price":79,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/L875gDDv/1000022007-cutout.png","options":["عبوة أصلية"],"features":["يدعم التطور الصحي للدماغ والعينين والجهاز العصبي للأطفال","مصمم للأطفال من عمر سنة فأكبر بنكهة الفراولة اللذيذة","زيت سمك نقي سائل بتركيز DHA عالٍ (119 مل)"]},{"id":71,"brand":"لايف إكستانشن","name":"الجلوتاثيون، سيستين وفيتامين ج، 100 كبسولة","price":72,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/wBmvXNbv/1000022009-cutout.png","options":["عبوة أصلية"],"features":["يدعم الجهاز المناعي ومضادات الأكسدة في الجسم","تركيبة متكاملة من الجلوتاثيون والسيستين وفيتامين ج","100 كبسولة خالية من الغلوتين والكائنات المعدلة وراثياً"]},{"id":72,"brand":"كاليفورنيا غولد نيوتريشن","name":"بروبيوتيك 5 LactoBif®، 5 مليار وحدة تشكيل مستعمرة، 120 كبسولة نباتية","price":70,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/h4rG1cMj/1000022011-cutout.png","options":["عبوة أصلية"],"features":["يحتوي على 8 سلالات نشطة من البكتيريا النافعة (5 مليار CFU)","يدعم صحة الجهاز الهضمي والتوازن المعوي اليومي","لا يحتاج إلى تبريد ومغلف بشكل فردي للحفاظ على الفعالية"]},{"id":73,"brand":"كاليفورنيا غولد نيوتريشن","name":"حمض الفوليك، خالٍ من الكحول، 1 أونصة سائلة (30 مل)","price":46,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/MGQT7Brn/1000022013-cutout.png","options":["عبوة أصلية"],"features":["الشكل النشط بيولوجياً من حمض الفوليك (Folinic Acid)","سائل سريع الامتصاص وخالٍ من الكحول والغلوتين والصويا","عبوة قطارة 30 مل لسهولة الجرعة"]},{"id":74,"brand":"ماري روثس","name":"فيتامينات متعددة سائلة صباحية + لنمو الشعر ، خوخ ومانجو ، 15.22 أونصة سائلة (450 مل)","price":129,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/cHGJXJVF/1000022015-cutout.png","options":["عبوة أصلية"],"features":["يدعم نمو الشعر وكثافته بتركيبة Lustriva المدروسة سريرياً","فيتامينات متعددة سائلة صباحية لزيادة الطاقة والحيوية اليومية","بنكهة الخوخ والمانجو الطبيعية، عبوة 450 مل"]},{"id":75,"brand":"كاليفورنيا غولد نيوتريشن","name":"(NMN) أحادي نيوكليوتيد النيكوتيناميد، 175 ملجم، 60 كبسولة نباتية","price":59,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/T1CYdJp6/1000022017-cutout.png","options":["عبوة أصلية"],"features":["يدعم مستويات NAD+ والطاقة الخلوية والحيوية","يعزز صحة الخلايا والتمثيل الغذائي والشيخوخة الصحية","60 كبسولة نباتية بتركيز 175 ملجم لكل كبسولة"]},{"id":76,"brand":"دكتورز بيست","name":"PepZin GI®، الزنك-إل-كارنوزين، 120 كبسولة نباتية","price":90,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/d3qVcxQ9/1000022019-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة المعدة وبطانة الجهاز الهضمي الفعالة","مركب PepZin GI المدروس لدعم الراحة الهضمية","120 كبسولة نباتية عالية الجودة"]},{"id":77,"brand":"لايف إكستانشن","name":"ليثيوم، 1000 مكجم، 100 كبسولة نباتية","price":47,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/vT3HYtDK/1000022021-cutout.png","options":["عبوة أصلية"],"features":["معدن أساسي لدعم صحة الدماغ والجسم والوظائف الإدراكية","يساعد في الحفاظ على التوازن العصبي والذهني","100 كبسولة نباتية بتركيز 1000 مكجم"]},{"id":78,"brand":"كاليفورنيا غولد نيوتريشن","name":"فيتامين (د3) + (ك2)، 60 كبسولة نباتية","price":21,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/pXcX3CwF/1000022023-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة العظام والأسنان والقلب والأوعية الدموية","تركيبة متوازنة من فيتامين D3 وفيتامين K2","60 كبسولة نباتية خالية من الغلوتين والصويا"]},{"id":79,"brand":"نورديك ناتورالز","name":"Ultimate Omega للصغار، للأطفال من عمر 6 سنوات فما فوق، بنكهة الفراولة، 90 كبسولة هلامية صغيرة (340 ملجم لكل كبسولة)","price":121,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/tCvC8kK3/1000022027-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الدماغ والتركيز والمناعة للأطفال من عمر 6 سنوات+","يوفر 680 ملجم أوميغا-3 لكل جرعة من كبسولتين صغيرتين","بنكهة الفراولة الطبيعية وسهلة البلع، 90 كبسولة صغيرة"]},{"id":80,"brand":"كاليفورنيا غولد نيوتريشن","name":"قطرات فيتامين د3 للرضع، 10 مكجم (400 وحدة دولية)، 0.34 أونصة سائلة (10 مل)","price":29,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/tCNmgmqn/1000022029-cutout.png","options":["عبوة أصلية"],"features":["يدعم نمو العظام والمناعة للرضع (400 وحدة دولية لكل جرعة)","قطرات سائلة خالية من الكحول والغلوتين والصويا","عبوة قطارة 10 مل مناسبة للرضع"]},{"id":81,"brand":"ناو فودز","name":"فيتامين د 3 وك 2 ، 120 كبسولة","price":40,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/kXmpqdm9/1000022031-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة العظام والقلب والأوعية الدموية","يجمع بين فيتامين D3 (1,000 وحدة) وفيتامين K2 (45 مكجم)","120 كبسولة عالية الجودة"]},{"id":82,"brand":"هيوماكس","name":"حمض التورورسوديوكسيكوليك (+Tudca)، 60 كبسولة","price":121,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/wTpGgdp9/1000022033-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الكبد وإفراز العصارة الصفراوية والهضم","تركيبة TUDCA+ المتطورة بتركيز 1000 ملجم لكل حصة","60 كبسولة عالية النقاء"]},{"id":83,"brand":"بوارون","name":"Camilia، تسكين آلام التسنين، للأطفال من عمر شهر واحد فأكثر، 15 جرعة سائلة محددة مسبقًا، 0.034 أونصة سائلة (1 مل) لكل جرعة","price":40,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/P563Wp8G/1000022036-cutout.png","options":["عبوة أصلية"],"features":["يساعد على تهدئة آلام اللثة والانزعاج أثناء التسنين للرضع والأطفال (1 شهر+)","15 جرعة سائلة جاهزة ومحددة مسبقاً (1 مل لكل جرعة) وخالية من الكحول","تركيبة نباتية لطيفة لا تحتاج إلى فرك اللثة"]},{"id":84,"brand":"سوانسون فيتامينز","name":"أوروتات الليثيوم ، 5 ملجم ، 60 كبسولة نباتية","price":26,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/SRpDScHs/1000022039-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الدماغ والجهاز العصبي والاتزان الذهني","ليثيوم أوروتات بتركيز 5 ملجم لكل كبسولة","60 كبسولة نباتية عالية الجودة"]},{"id":85,"brand":"سوانسون فيتامينز","name":"Albion®، جليسينات المغنيسيوم، 133 مليجرام، 90 كبسولة نباتية صرف","price":37,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/Vv9htztL/1000022266-cutout.png","options":["عبوة أصلية"],"features":["مغنيسيوم عالي الامتصاص بتقنية Albion® ولطيف على المعدة","يدعم صحة العضلات والعظام والاسترخاء والراحة الليلية","90 كبسولة نباتية صرف بتركيز 133 ملجم"]},{"id":86,"brand":"كاليفورنيا غولد نيوتريشن","name":"حديد® Ferrochel (مكرر جليسينات)، 36 ملجم، 90 كبسولة نباتية","price":30,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/2SHcQbBS/1000022043-cutout.png","options":["عبوة أصلية"],"features":["يدعم مستويات الحديد وصحة الدم والنشاط اليومي","مكرر جليسينات الحديد Ferrochel لطيف على المعدة ولا يسبب الإمساك","90 كبسولة نباتية مناسبة للنباتيين"]},{"id":87,"brand":"كونول","name":"100 ، Ultra CoQ10 ملجم ، 21 كبسولة هلامية","price":37,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/pd4sSwZ0/1000022045-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة القلب وإنتاج الطاقة الخلوية بكفاءة عالية","تركيبة Ultra CoQ10 قابلة للذوبان في الماء والدهون لامتصاص فائق","21 كبسولة هلامية بتركيز 100 ملجم"]},{"id":88,"brand":"دكتورز بيست","name":"مساعد الإنزيم Q10 عالي الامتصاص، 60 كبسولة هلامية","price":50,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/mkNVttGV/1000022047-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة القلب وإنتاج الطاقة في الخلايا","مدعم بخلاصة BioPerine لزيادة الامتصاص والتوافر الحيوي","60 كبسولة هلامية بتركيز 100 ملجم"]},{"id":89,"brand":"كاليفورنيا غولد نيوتريشن","name":"أقراص فيتامين ج للمضغ المعززة بفيتامين أ من بيتا-كاروتين 100%، البرتقال، 90 قرصًا للمضغ نباتيًا","price":51,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/05pVtHJw/1000022051-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الجهاز المناعي ومضادات الأكسدة اليومية","معزز بفيتامين أ من بيتا-كاروتين 100% وفيتامين ج","90 قرصاً نباتياً للمضغ بنكهة البرتقال وخالٍ من الجيلاتين"]},{"id":90,"brand":"لايف إكستانشن","name":"كبسولات مغنيسيوم، 500 ملجم، 100 كبسولة نباتية","price":38,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/NfBpZ713/1000022053-cutout.png","options":["عبوة أصلية"],"features":["معدن أساسي يدعم صحة القلب والأوعية الدموية والعضلات والعظام","يساعد في دعم الوظائف العصبية واسترخاء الجسم","100 كبسولة نباتية بتركيز 500 ملجم"]},{"id":91,"brand":"كاليفورنيا غولد نيوتريشن","name":"مجموعة المنتجات الرياضية، كيرياتين مونوهيدريت نقي، 750 ملجم، 240 كبسولة نباتية صرف","price":72,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الطاقة","badge":"الطاقة","img":"https://i.postimg.cc/dtw4gm2J/1000022055-cutout.png","options":["عبوة أصلية"],"features":["يدعم القوة العضلية والأداء البدني والطاقة أثناء التمارين","كرياتين مونوهيدريت نقي بتركيز 750 ملجم لكل كبسولة","240 كبسولة نباتية صرف خالية من الغلوتين والصويا"]},{"id":92,"brand":"كواليتي أوف لايف","name":"Allerfin®، 60 كبسولة نباتية","price":128,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/fTDB1jcT/1000022057-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الجيوب الأنفية والتنفس والمناعة الموسمية","يحتوي على Allerinol™ والكيرسيتين والبروميلين","60 كبسولة نباتية عالية الجودة"]},{"id":93,"brand":"ناو فودز","name":"التورين ، 1,000 ملجم ، 100 كبسولة نباتية","price":42,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/kXsfC6sW/1000022059-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الجهاز العصبي والوظائف البصرية والقلبية","حمض أميني بتركيز مضاعف 1,000 ملجم لكل كبسولة","100 كبسولة نباتية خالية من الغلوتين والصويا"]},{"id":94,"brand":"ناو فودز","name":"زنك ، 50 ملجم ، 100 قرص","price":24,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/fRb5Rzq2/1000022061-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الجهاز المناعي والنشاط الخلوي والبشرة","معدن الزنك بتركيز 50 ملجم لكل قرص","100 قرص نباتي مناسب للنباتيين"]},{"id":95,"brand":"ناو فودز","name":"فيتامين د-3، عالي الفعالية، 2,000 وحدة دولية، 240 كبسولة هلامية","price":39,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الفيتامينات","badge":"الفيتامينات","img":"https://i.postimg.cc/13zM3m77/1000022063-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة العظام والأسنان والعضلات والجهاز المناعي","عالي الفعالية بتركيز 2,000 وحدة دولية لكل كبسولة","240 كبسولة هلامية اقتصادية"]},{"id":96,"brand":"كاليفورنيا غولد نيوتريشن","name":"أستازانتين، AstaLif أيسلندي نقي، 12 ملجم، 30 كبسولة هلامية نباتية","price":47,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجمال","badge":"الجمال","img":"https://i.postimg.cc/x1dg1fp3/1000022065-cutout.png","options":["عبوة أصلية"],"features":["مضاد أكسدة قوي يدعم صحة البشرة والعين والمناعة","أستازانتين أيسلندي نقي بتركيز 12 ملجم لكل حصة","30 كبسولة هلامية نباتية خالية من الغلوتين والصويا"]},{"id":97,"brand":"سبورتس ريسورش","name":"زيت سمك أوميغا 3، قوة ثلاثية، 30 كبسولة هلامية","price":83,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/T3H0yzZ6/1000022067-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة القلب والدماغ والمفاصل بتركيز ثلاثي القوة","يوفر 1055 ملجم أوميغا-3 من 1250 ملجم زيت سمك لكل كبسولة","30 كبسولة هلامية خالية من الغلوتين"]},{"id":98,"brand":"كونول","name":"جليسينات المغنيسيوم ، 60 قرصًا مغلفًا (150 ملجم لكل قرص)","price":80,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/YS5xR1rx/1000022069-cutout.png","options":["عبوة أصلية"],"features":["مغنيسيوم عالي الامتصاص ولطيف على المعدة","يدعم صحة الأعصاب والعظام والعضلات والراحة","60 قرصاً مغلفاً سهل البلع (300 ملجم لكل قرصين)"]},{"id":99,"brand":"ناو فودز","name":"العبعب المنوم، خلاصة موحدة، 450 ملجم، 90 كبسولة نباتية","price":53,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/d0kBGWYT/1000022071-cutout.png","options":["عبوة أصلية"],"features":["خلاصة أشواغاندا موحدة بتركيز 450 ملجم لدعم التوتر والهدوء","يعزز التكيف مع الإجهاد اليومي ويدعم المناعة","90 كبسولة نباتية مناسبة للنباتيين"]},{"id":100,"brand":"سوانسون فيتامينز","name":"عبعب منوم® Full Spectrum، بمقدار 450 ملجم، 100 كبسولة نباتية صرف","price":33,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الصحة العامة","badge":"الصحة العامة","img":"https://i.postimg.cc/Y0NPFtF0/1000022268-cutout.png","options":["عبوة أصلية"],"features":["يدعم إدارة التوتر والراحة الذهنية والهدوء اليومي","جذور أشواغاندا كاملة الطيف بتركيز 450 ملجم لكل كبسولة","100 كبسولة نباتية صرف"]},{"id":101,"brand":"كاليفورنيا غولد نيوتريشن","name":"بروبيوتيك LactoBif® 25 مع Cran-Max®، 25 مليار وحدة تشكيل مستعمرة، 30 كبسولة نباتية","price":70,"oldPrice":0,"category":"المكملات الغذائية","subtag":"الجهاز الهضمي","badge":"الجهاز الهضمي","img":"https://i.postimg.cc/x8GZm9mm/1000022269-cutout.png","options":["عبوة أصلية"],"features":["يدعم صحة الجهاز الهضمي والمسالك البولية مع 250 ملجم Cran-Max®","يحتوي على 8 سلالات نشطة من البكتيريا النافعة (25 مليار CFU)","لا يحتاج إلى تبريد ومغلف بشرائط محكمة للنباتيين"]},{"id":102,"brand":"صبايا إب • كوافير","name":"مجموعة عناية وترميم الشعر بعد الصبغة","price":7500,"oldPrice":9500,"category":"الكوافير والعناية","badge":"الأكثر طلباً","img":"","options":["للشعر المصبوغ","للشعر الجاف","تركيبة مكثفة"],"features":["ترطيب عميق وتقليل التقصف بعد التصفيف والصبغات","يمنح الشعر لمعاناً صحياً وملمساً انسيابياً","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":103,"brand":"صبايا إب • كوافير","name":"سيروم حماية الشعر من الحرارة والهيشان","price":5700,"oldPrice":0,"category":"الكوافير والعناية","badge":"","img":"","options":["حجم عادي","حجم صالون"],"features":["حماية فعالة أثناء استخدام الاستشوار والفير","يخفف الهيشان ويسهل تسريح الشعر","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":104,"brand":"صبايا إب • كوافير","name":"سشوار احترافي بقوة تجفيف سريعة للصالونات","price":24500,"oldPrice":28000,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["220V","مزدوج"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود مطفي, وردي ورمادي)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":105,"brand":"صبايا إب • كوافير","name":"مكواة سيراميك لفرد وتنعيم الشعر باحترافية","price":20350,"oldPrice":23900,"category":"الكوافير والعناية","badge":"","img":"","options":["حرارة حتى 230°","شاشة رقمية"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود وذهبي, رمادي)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":106,"brand":"صبايا إب • كوافير","name":"فير تمويج الشعر (ويفي) للحصول على موجات جذابة","price":18500,"oldPrice":21300,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["25 مم","32 مم"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (وردي أنيق, أسود)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":107,"brand":"صبايا إب • كوافير","name":"ماسك بروتين مكثف لإصلاح الشعر التالف والمصبوغ","price":9450,"oldPrice":11400,"category":"الكوافير والعناية","badge":"مختاراتنا","img":"","options":["500 مل","1000 مل"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بروتين الكيراتين, أرغان مغربي)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":108,"brand":"صبايا إب • كوافير","name":"حمام زيت بالزبدة والأفوكادو لترطيب عميق","price":8500,"oldPrice":10100,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["500 مل","1000 مل"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أفوكادو, زبدة الشيا)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":109,"brand":"صبايا إب • كوافير","name":"سيروم لمعان وحماية من حرارة التصفيف","price":8550,"oldPrice":10000,"category":"الكوافير والعناية","badge":"","img":"","options":["100 مل","200 مل"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (زيت الأرغان, سيليكون ناعم)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":110,"brand":"صبايا إب • كوافير","name":"فرشاة حرارية دائرية لتصفيف وتكثيف الشعر","price":8000,"oldPrice":9400,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["مقاس متوسط","مقاس كبير"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, ذهبي)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":111,"brand":"صبايا إب • كوافير","name":"مشط كربوني مقاوم للحرارة لتقسيم الشعر بدقة","price":3200,"oldPrice":4200,"category":"الكوافير والعناية","badge":"","img":"","options":["قطعة واحدة"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":112,"brand":"صبايا إب • كوافير","name":"مجموعة ملقطات وربطات كوافير احترافية","price":2750,"oldPrice":3750,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["12 قطعة","24 قطعة"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, ملون)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":113,"brand":"صبايا إب • كوافير","name":"أمبولات تغذية وتقوية بصيلات الشعر ومنع التساقط","price":11700,"oldPrice":13800,"category":"الكوافير والعناية","badge":"","img":"","options":["علبة 10 أمبولات"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (خلاصة الأعشاب, بيوتين وكافيين)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":114,"brand":"صبايا إب • كوافير","name":"مجموعة عناية وترميم الشعر بعد الصبغة (مختار بعناية)","price":9000,"oldPrice":11000,"category":"الكوافير والعناية","badge":"الأكثر طلباً","img":"","options":["للشعر المصبوغ","للشعر الجاف","تركيبة مكثفة"],"features":["ترطيب عميق وتقليل التقصف بعد التصفيف والصبغات","يمنح الشعر لمعاناً صحياً وملمساً انسيابياً","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":115,"brand":"صبايا إب • كوافير","name":"سيروم حماية الشعر من الحرارة والهيشان (إصدار مميز)","price":7200,"oldPrice":0,"category":"الكوافير والعناية","badge":"","img":"","options":["حجم عادي","حجم صالون"],"features":["حماية فعالة أثناء استخدام الاستشوار والفير","يخفف الهيشان ويسهل تسريح الشعر","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":116,"brand":"صبايا إب • كوافير","name":"سشوار احترافي بقوة تجفيف سريعة للصالونات (عناية متكاملة)","price":26000,"oldPrice":29500,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["220V","مزدوج"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود مطفي, وردي ورمادي)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":117,"brand":"صبايا إب • كوافير","name":"مكواة سيراميك لفرد وتنعيم الشعر باحترافية (تصميم أنيق)","price":19350,"oldPrice":22900,"category":"الكوافير والعناية","badge":"مختاراتنا","img":"","options":["حرارة حتى 230°","شاشة رقمية"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود وذهبي, رمادي)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":118,"brand":"صبايا إب • كوافير","name":"فير تمويج الشعر (ويفي) للحصول على موجات جذابة (تركيبة متوازنة)","price":17500,"oldPrice":20300,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["25 مم","32 مم"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (وردي أنيق, أسود)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":119,"brand":"صبايا إب • كوافير","name":"ماسك بروتين مكثف لإصلاح الشعر التالف والمصبوغ (لمسة راقية)","price":10950,"oldPrice":12900,"category":"الكوافير والعناية","badge":"","img":"","options":["500 مل","1000 مل"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بروتين الكيراتين, أرغان مغربي)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":120,"brand":"صبايا إب • كوافير","name":"حمام زيت بالزبدة والأفوكادو لترطيب عميق (نسخة مختارة)","price":10000,"oldPrice":11600,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["500 مل","1000 مل"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أفوكادو, زبدة الشيا)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":121,"brand":"صبايا إب • كوافير","name":"سيروم لمعان وحماية من حرارة التصفيف (مطور)","price":10050,"oldPrice":11500,"category":"الكوافير والعناية","badge":"","img":"","options":["100 مل","200 مل"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (زيت الأرغان, سيليكون ناعم)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":122,"brand":"صبايا إب • كوافير","name":"فرشاة حرارية دائرية لتصفيف وتكثيف الشعر (فاخر)","price":7000,"oldPrice":8400,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["مقاس متوسط","مقاس كبير"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, ذهبي)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":123,"brand":"صبايا إب • كوافير","name":"مشط كربوني مقاوم للحرارة لتقسيم الشعر بدقة (للاستخدام اليومي)","price":2500,"oldPrice":3500,"category":"الكوافير والعناية","badge":"","img":"","options":["قطعة واحدة"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":124,"brand":"صبايا إب • كوافير","name":"مجموعة ملقطات وربطات كوافير احترافية (مختار بعناية)","price":4250,"oldPrice":5250,"category":"الكوافير والعناية","badge":"كوافير وعناية","img":"","options":["12 قطعة","24 قطعة"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, ملون)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":125,"brand":"صبايا إب • كوافير","name":"أمبولات تغذية وتقوية بصيلات الشعر ومنع التساقط (إصدار مميز)","price":13200,"oldPrice":15300,"category":"الكوافير والعناية","badge":"","img":"","options":["علبة 10 أمبولات"],"features":["منتج مختار بعناية لقسم الكوافير والعناية في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (خلاصة الأعشاب, بيوتين وكافيين)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":126,"brand":"شي إن ستايل • صبايا إب","name":"طقم إكسسوارات شعر نسائية أنيقة","price":3500,"oldPrice":4500,"category":"منتجات شي إن","badge":"ترند شي إن","img":"","options":["ذهبي","فضي","وردي"],"features":["تصميم أنيق مستوحى من أحدث صيحات شي إن","مثالي للتسريحات اليومية والمناسبات","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":127,"brand":"شي إن ستايل • صبايا إب","name":"حقيبة كتف عصرية صغيرة للسهرات والمشاوير","price":9000,"oldPrice":0,"category":"منتجات شي إن","badge":"","img":"","options":["أسود","بيج","عنابي"],"features":["إطلالة عصرية أنيقة تنسق بسهولة مع مختلف الملابس","مقاس عملي للهاتف والمستلزمات الأساسية","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":128,"brand":"شي إن ستايل • صبايا إب","name":"فستان سهرة ساتان ناعم بقصة انسيابية","price":14500,"oldPrice":17000,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["S","M","L","XL"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود ملكي, عنابي, شمبانيا)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":129,"brand":"شي إن ستايل • صبايا إب","name":"بلوزة شيفون أنيقة بربطة عنق","price":8650,"oldPrice":10100,"category":"منتجات شي إن","badge":"","img":"","options":["S","M","L"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أبيض, وردي فاتح, بيج)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":130,"brand":"شي إن ستايل • صبايا إب","name":"طقم تنورة وبلوزة عصرية للمشاوير","price":14500,"oldPrice":16800,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["S","M","L","XL"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بني كراميل, رمادي, أسود)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":131,"brand":"شي إن ستايل • صبايا إب","name":"عباية كاجوال مفتوحة بقماش كريب خفيف","price":15550,"oldPrice":18700,"category":"منتجات شي إن","badge":"مختاراتنا","img":"","options":["52","54","56","58"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, زيتي, موكا)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":132,"brand":"شي إن ستايل • صبايا إب","name":"حقيبة يد صغيرة جلد ناعم بسلسلة ذهبية","price":9800,"oldPrice":11600,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["مقاس قياسي"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, أبيض كريمي, أحمر)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":133,"brand":"شي إن ستايل • صبايا إب","name":"حقيبة كروس أنيقة عملية للجامعة والمشاوير","price":11350,"oldPrice":13500,"category":"منتجات شي إن","badge":"","img":"","options":["مقاس قياسي"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بيج, بني, وردي)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":134,"brand":"شي إن ستايل • صبايا إب","name":"طقم مجوهرات ناعم مطلي بالذهب","price":9000,"oldPrice":10700,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["طقم كامل"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ذهبي لامع, ذهبي وردي)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":135,"brand":"شي إن ستايل • صبايا إب","name":"أقراط متدلية عصرية لإطلالة مسائية","price":4500,"oldPrice":5500,"category":"منتجات شي إن","badge":"","img":"","options":["زوج واحد"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ذهبي, فضي, لؤلؤي)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":136,"brand":"شي إن ستايل • صبايا إب","name":"وشاح حرير مطبوع بنقشات راقية","price":3550,"oldPrice":4600,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["مقاس واحد"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (متعدد الألوان, كحلي وذهبي)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":137,"brand":"شي إن ستايل • صبايا إب","name":"مشد تشكيل الجسم مريح تحت الفساتين","price":8400,"oldPrice":10100,"category":"منتجات شي إن","badge":"","img":"","options":["S/M","L/XL"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (لون البشرة, أسود)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":138,"brand":"شي إن ستايل • صبايا إب","name":"بيجامة نوم حريرية ناعمة بأكمام طويلة","price":10250,"oldPrice":12200,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["S","M","L","XL"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (وردي ناعم, سماوي, أبيض)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":139,"brand":"شي إن ستايل • صبايا إب","name":"نظارة شمسية نسائية بإطار عصري","price":7700,"oldPrice":9100,"category":"منتجات شي إن","badge":"","img":"","options":["مقاس واحد"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, بني هافانا)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":140,"brand":"شي إن ستايل • صبايا إب","name":"حزام خصر أنيق بإبزيم معدني فاخر","price":6650,"oldPrice":7800,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["M","L"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, جملي)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":141,"brand":"شي إن ستايل • صبايا إب","name":"كارديجان صيفي خفيف مفتوح من الأمام","price":9700,"oldPrice":11600,"category":"منتجات شي إن","badge":"مختاراتنا","img":"","options":["S/M","L/XL"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بيج, أخضر نعناعي, وردي)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":142,"brand":"شي إن ستايل • صبايا إب","name":"حذاء فلات مريح مقدمة مدببة","price":10700,"oldPrice":12500,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["37","38","39","40"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, نود)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":143,"brand":"شي إن ستايل • صبايا إب","name":"طقم إكسسوارات شعر نسائية أنيقة (لمسة راقية)","price":5000,"oldPrice":6000,"category":"منتجات شي إن","badge":"","img":"","options":["ذهبي","فضي","وردي"],"features":["تصميم أنيق مستوحى من أحدث صيحات شي إن","مثالي للتسريحات اليومية والمناسبات","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":144,"brand":"شي إن ستايل • صبايا إب","name":"حقيبة كتف عصرية صغيرة للسهرات والمشاوير (نسخة مختارة)","price":10500,"oldPrice":0,"category":"منتجات شي إن","badge":"جديد","img":"","options":["أسود","بيج","عنابي"],"features":["إطلالة عصرية أنيقة تنسق بسهولة مع مختلف الملابس","مقاس عملي للهاتف والمستلزمات الأساسية","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":145,"brand":"شي إن ستايل • صبايا إب","name":"فستان سهرة ساتان ناعم بقصة انسيابية (مطور)","price":16000,"oldPrice":18500,"category":"منتجات شي إن","badge":"","img":"","options":["S","M","L","XL"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود ملكي, عنابي, شمبانيا)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":146,"brand":"شي إن ستايل • صبايا إب","name":"بلوزة شيفون أنيقة بربطة عنق (فاخر)","price":7650,"oldPrice":9100,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["S","M","L"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أبيض, وردي فاتح, بيج)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":147,"brand":"شي إن ستايل • صبايا إب","name":"طقم تنورة وبلوزة عصرية للمشاوير (للاستخدام اليومي)","price":13500,"oldPrice":15800,"category":"منتجات شي إن","badge":"","img":"","options":["S","M","L","XL"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بني كراميل, رمادي, أسود)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":148,"brand":"شي إن ستايل • صبايا إب","name":"عباية كاجوال مفتوحة بقماش كريب خفيف (مختار بعناية)","price":17050,"oldPrice":20200,"category":"منتجات شي إن","badge":"شي إن","img":"","options":["52","54","56","58"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, زيتي, موكا)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":149,"brand":"شي إن ستايل • صبايا إب","name":"حقيبة يد صغيرة جلد ناعم بسلسلة ذهبية (إصدار مميز)","price":11300,"oldPrice":13100,"category":"منتجات شي إن","badge":"","img":"","options":["مقاس قياسي"],"features":["منتج مختار بعناية لقسم منتجات شي إن في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود, أبيض كريمي, أحمر)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":150,"brand":"صبايا إب • بشرة","name":"غسول وسيروم ترطيب وتنظيف البشرة اليومي","price":6200,"oldPrice":0,"category":"العناية بالبشرة","badge":"نضارة","img":"","options":["بشرة مختلطة/عادية","بشرة حساسة"],"features":["ينظف البشرة بلطف دون التسبب بجفاف","يمنح البشرة إحساساً بالانتعاش والنعومة","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":151,"brand":"صبايا إب • بشرة","name":"سيروم هيالورونيك أسيد لترطيب البشرة بعمق","price":8400,"oldPrice":10000,"category":"العناية بالبشرة","badge":"","img":"","options":["30 مل","50 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ترطيب مكثف)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":152,"brand":"صبايا إب • بشرة","name":"سيروم فيتامين سي لإشراقة وتوحيد لون البشرة","price":9950,"oldPrice":11900,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["30 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (نضارة وتفتيح)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":153,"brand":"صبايا إب • بشرة","name":"سيروم نياسيناميد لتنقية المسام وتقليل اللمعان","price":9600,"oldPrice":11200,"category":"العناية بالبشرة","badge":"","img":"","options":["30 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (للبشرة المختلطة والدهنية)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":154,"brand":"صبايا إب • بشرة","name":"غسول وجه لطيف خالٍ من الصابون لجميع أنواع البشرة","price":8750,"oldPrice":10100,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["150 مل","250 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ترطيب وتنظيف)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":155,"brand":"صبايا إب • بشرة","name":"كريم مرطب يومي بحاجز حماية للبشرة","price":8200,"oldPrice":9800,"category":"العناية بالبشرة","badge":"مختاراتنا","img":"","options":["50 مل","100 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بشرة جافة وحساسة)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":156,"brand":"صبايا إب • بشرة","name":"واقي شمس شفاف بقوام خفيف دون أثر أبيض","price":11650,"oldPrice":14000,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["50 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (SPF 50+)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":157,"brand":"صبايا إب • بشرة","name":"مقشر لطيف بالأحماض لتجديد خلايا البشرة","price":11200,"oldPrice":13200,"category":"العناية بالبشرة","badge":"","img":"","options":["30 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (استخدام ليلي)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":158,"brand":"صبايا إب • بشرة","name":"ماسك طين منقي ومهدئ للبشرة","price":6800,"oldPrice":8000,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["100 جم"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (طين وردي, طين أخضر)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":159,"brand":"صبايا إب • بشرة","name":"كريم عيون مرطب لتخفيف مظهر الإرهاق","price":9250,"oldPrice":10800,"category":"العناية بالبشرة","badge":"","img":"","options":["15 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ترطيب محيط العين)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":160,"brand":"صبايا إب • بشرة","name":"ماء ميسيلار لإزالة المكياج والشوائب بلطف","price":5600,"oldPrice":6800,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["200 مل","400 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (للبشرة الحساسة)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":161,"brand":"صبايا إب • بشرة","name":"غسول وسيروم ترطيب وتنظيف البشرة اليومي (للاستخدام اليومي)","price":7200,"oldPrice":0,"category":"العناية بالبشرة","badge":"","img":"","options":["بشرة مختلطة/عادية","بشرة حساسة"],"features":["ينظف البشرة بلطف دون التسبب بجفاف","يمنح البشرة إحساساً بالانتعاش والنعومة","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":162,"brand":"صبايا إب • بشرة","name":"سيروم هيالورونيك أسيد لترطيب البشرة بعمق (مختار بعناية)","price":9400,"oldPrice":11000,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["30 مل","50 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ترطيب مكثف)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":163,"brand":"صبايا إب • بشرة","name":"سيروم فيتامين سي لإشراقة وتوحيد لون البشرة (إصدار مميز)","price":10950,"oldPrice":12900,"category":"العناية بالبشرة","badge":"","img":"","options":["30 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (نضارة وتفتيح)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":164,"brand":"صبايا إب • بشرة","name":"سيروم نياسيناميد لتنقية المسام وتقليل اللمعان (عناية متكاملة)","price":10600,"oldPrice":12200,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["30 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (للبشرة المختلطة والدهنية)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":165,"brand":"صبايا إب • بشرة","name":"غسول وجه لطيف خالٍ من الصابون لجميع أنواع البشرة (تصميم أنيق)","price":7250,"oldPrice":8600,"category":"العناية بالبشرة","badge":"مختاراتنا","img":"","options":["150 مل","250 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ترطيب وتنظيف)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":166,"brand":"صبايا إب • بشرة","name":"كريم مرطب يومي بحاجز حماية للبشرة (تركيبة متوازنة)","price":9200,"oldPrice":10800,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["50 مل","100 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بشرة جافة وحساسة)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":167,"brand":"صبايا إب • بشرة","name":"واقي شمس شفاف بقوام خفيف دون أثر أبيض (لمسة راقية)","price":12650,"oldPrice":15000,"category":"العناية بالبشرة","badge":"","img":"","options":["50 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (SPF 50+)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":168,"brand":"صبايا إب • بشرة","name":"مقشر لطيف بالأحماض لتجديد خلايا البشرة (نسخة مختارة)","price":12200,"oldPrice":14200,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["30 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (استخدام ليلي)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":169,"brand":"صبايا إب • بشرة","name":"ماسك طين منقي ومهدئ للبشرة (مطور)","price":7800,"oldPrice":9000,"category":"العناية بالبشرة","badge":"","img":"","options":["100 جم"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (طين وردي, طين أخضر)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":170,"brand":"صبايا إب • بشرة","name":"كريم عيون مرطب لتخفيف مظهر الإرهاق (فاخر)","price":7750,"oldPrice":9300,"category":"العناية بالبشرة","badge":"عناية بالبشرة","img":"","options":["15 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ترطيب محيط العين)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":171,"brand":"صبايا إب • بشرة","name":"ماء ميسيلار لإزالة المكياج والشوائب بلطف (للاستخدام اليومي)","price":6600,"oldPrice":7800,"category":"العناية بالبشرة","badge":"","img":"","options":["200 مل","400 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (للبشرة الحساسة)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":172,"brand":"صبايا إب • بشرة","name":"غسول وسيروم ترطيب وتنظيف البشرة اليومي (إصدار مميز)","price":8200,"oldPrice":0,"category":"العناية بالبشرة","badge":"نضارة","img":"","options":["بشرة مختلطة/عادية","بشرة حساسة"],"features":["ينظف البشرة بلطف دون التسبب بجفاف","يمنح البشرة إحساساً بالانتعاش والنعومة","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":173,"brand":"صبايا إب • بشرة","name":"سيروم هيالورونيك أسيد لترطيب البشرة بعمق (عناية متكاملة)","price":10400,"oldPrice":12000,"category":"العناية بالبشرة","badge":"","img":"","options":["30 مل","50 مل"],"features":["منتج مختار بعناية لقسم العناية بالبشرة في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ترطيب مكثف)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":174,"brand":"صبايا إب • عطور","name":"معطر جسم وشعر برائحة فواحة وثبات مميز","price":4800,"oldPrice":5800,"category":"العطور والإكسسوارات","badge":"فوحان","img":"","options":["فانيليا وورد","عنبر ومسك","فواكه منعشة"],"features":["تركيبة لطيفة مناسبة للشعر والجسم والملابس","رائحة جذابة تدوم لساعات","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":175,"brand":"صبايا إب • عطور وإكسسوارات","name":"عطر نسائي زهري فواح بثبات يدوم طويلاً","price":16000,"oldPrice":19000,"category":"العطور والإكسسوارات","badge":"","img":"","options":["50 مل","100 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (زهري شرقي, فانيليا ومسك)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":176,"brand":"صبايا إب • عطور وإكسسوارات","name":"معطر جسم (Body Mist) برائحة الفواكه والورد","price":6550,"oldPrice":7900,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["250 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (توت وفانيليا, ورد جوري)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":177,"brand":"صبايا إب • عطور وإكسسوارات","name":"معطر شعر خفيف برائحة جذابة دون جفاف","price":7000,"oldPrice":8300,"category":"العطور والإكسسوارات","badge":"","img":"","options":["100 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (عود ناعم, مسك أبيض)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":178,"brand":"صبايا إب • عطور وإكسسوارات","name":"مجموعة إكسسوارات يد وخواتم نسائية أنيقة","price":6950,"oldPrice":8200,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["طقم متكامل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ذهبي, فضي)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":179,"brand":"صبايا إب • عطور وإكسسوارات","name":"خلخال نسائي ناعم بتصميم عصري","price":4000,"oldPrice":5100,"category":"العطور والإكسسوارات","badge":"مختاراتنا","img":"","options":["مقاس قابل للتعديل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ذهبي, فضي)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":180,"brand":"صبايا إب • عطور وإكسسوارات","name":"مبخرة صغيرة محمولة للمنزل والشنطة","price":13750,"oldPrice":16300,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["قطعة واحدة"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود مطفي, أبيض لؤلؤي)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":181,"brand":"صبايا إب • عطور وإكسسوارات","name":"مخلط عود ومسك فاخر للمناسبات الخاصة","price":16300,"oldPrice":19200,"category":"العطور والإكسسوارات","badge":"","img":"","options":["12 مل","25 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (عود كمبودي, مسك الطهارة)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":182,"brand":"صبايا إب • عطور وإكسسوارات","name":"طقم أساور جلد وستانلس ستيل أنيق","price":5100,"oldPrice":6100,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["3 قطع"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بني وذهبي, أسود وفضي)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":183,"brand":"صبايا إب • عطور","name":"معطر جسم وشعر برائحة فواحة وثبات مميز (مطور)","price":7300,"oldPrice":8300,"category":"العطور والإكسسوارات","badge":"","img":"","options":["فانيليا وورد","عنبر ومسك","فواكه منعشة"],"features":["تركيبة لطيفة مناسبة للشعر والجسم والملابس","رائحة جذابة تدوم لساعات","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":184,"brand":"صبايا إب • عطور وإكسسوارات","name":"عطر نسائي زهري فواح بثبات يدوم طويلاً (فاخر)","price":16000,"oldPrice":19000,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["50 مل","100 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (زهري شرقي, فانيليا ومسك)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":185,"brand":"صبايا إب • عطور وإكسسوارات","name":"معطر جسم (Body Mist) برائحة الفواكه والورد (للاستخدام اليومي)","price":6550,"oldPrice":7900,"category":"العطور والإكسسوارات","badge":"","img":"","options":["250 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (توت وفانيليا, ورد جوري)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":186,"brand":"صبايا إب • عطور وإكسسوارات","name":"معطر شعر خفيف برائحة جذابة دون جفاف (مختار بعناية)","price":7000,"oldPrice":8300,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["100 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (عود ناعم, مسك أبيض)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":187,"brand":"صبايا إب • عطور وإكسسوارات","name":"مجموعة إكسسوارات يد وخواتم نسائية أنيقة (إصدار مميز)","price":6950,"oldPrice":8200,"category":"العطور والإكسسوارات","badge":"","img":"","options":["طقم متكامل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ذهبي, فضي)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":188,"brand":"صبايا إب • عطور وإكسسوارات","name":"خلخال نسائي ناعم بتصميم عصري (عناية متكاملة)","price":6500,"oldPrice":7600,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["مقاس قابل للتعديل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ذهبي, فضي)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":189,"brand":"صبايا إب • عطور وإكسسوارات","name":"مبخرة صغيرة محمولة للمنزل والشنطة (تصميم أنيق)","price":13750,"oldPrice":16300,"category":"العطور والإكسسوارات","badge":"مختاراتنا","img":"","options":["قطعة واحدة"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (أسود مطفي, أبيض لؤلؤي)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":190,"brand":"صبايا إب • عطور وإكسسوارات","name":"مخلط عود ومسك فاخر للمناسبات الخاصة (تركيبة متوازنة)","price":16300,"oldPrice":19200,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["12 مل","25 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (عود كمبودي, مسك الطهارة)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":191,"brand":"صبايا إب • عطور وإكسسوارات","name":"طقم أساور جلد وستانلس ستيل أنيق (لمسة راقية)","price":5100,"oldPrice":6100,"category":"العطور والإكسسوارات","badge":"","img":"","options":["3 قطع"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (بني وذهبي, أسود وفضي)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":192,"brand":"صبايا إب • عطور","name":"معطر جسم وشعر برائحة فواحة وثبات مميز — مختارات 19","price":7300,"oldPrice":8300,"category":"العطور والإكسسوارات","badge":"فوحان","img":"","options":["فانيليا وورد","عنبر ومسك","فواكه منعشة"],"features":["تركيبة لطيفة مناسبة للشعر والجسم والملابس","رائحة جذابة تدوم لساعات","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":193,"brand":"صبايا إب • عطور وإكسسوارات","name":"عطر نسائي زهري فواح بثبات يدوم طويلاً — مختارات 20","price":18500,"oldPrice":21500,"category":"العطور والإكسسوارات","badge":"","img":"","options":["50 مل","100 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (زهري شرقي, فانيليا ومسك)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]},{"id":194,"brand":"صبايا إب • عطور وإكسسوارات","name":"معطر جسم (Body Mist) برائحة الفواكه والورد — مختارات 21","price":6550,"oldPrice":7900,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["250 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (توت وفانيليا, ورد جوري)","خيار عملي وأنيق يناسب الاستخدام اليومي والهدايا"]},{"id":195,"brand":"صبايا إب • عطور وإكسسوارات","name":"معطر شعر خفيف برائحة جذابة دون جفاف — مختارات 22","price":7000,"oldPrice":8300,"category":"العطور والإكسسوارات","badge":"","img":"","options":["100 مل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (عود ناعم, مسك أبيض)","مختار بعناية ليجمع بين الجودة العالية والسعر المناسب"]},{"id":196,"brand":"صبايا إب • عطور وإكسسوارات","name":"مجموعة إكسسوارات يد وخواتم نسائية أنيقة — مختارات 23","price":6950,"oldPrice":8200,"category":"العطور والإكسسوارات","badge":"عطور وإكسسوارات","img":"","options":["طقم متكامل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ذهبي, فضي)","تصميم مدروس وتفاصيل دقيقة تمنحك تجربة استخدام مريحة"]},{"id":197,"brand":"صبايا إب • عطور وإكسسوارات","name":"خلخال نسائي ناعم بتصميم عصري — مختارات 24","price":6500,"oldPrice":7600,"category":"العطور والإكسسوارات","badge":"","img":"","options":["مقاس قابل للتعديل"],"features":["منتج مختار بعناية لقسم العطور والإكسسوارات في متجر صبايا إب","مواصفات عملية وجودة مناسبة للاستخدام اليومي (ذهبي, فضي)","إضافة مميزة لروتينك اليومي مع جودة ثابتة وموثوقة"]}];
+// حالة التطبيق
+    let cart = [];
+    let favorites = [];
+    let activeCategory = "الكل";
+    let currentFilteredList = [];
+    let visibleLimit = STORE_CONFIG.pageSize;
+    let currentDetailProduct = null;
+    let selectedDetailOption = "";
+    let heroIndex = 0;
+    let layoutIndex = 0;
+    let isLightTheme = false;
+
+    const GRID_LAYOUTS = [
+      { colsClass: "", label: "2 أعمدة", icon: "fa-solid fa-table-cells-large" },
+      { colsClass: "cols-3", label: "3 أعمدة", icon: "fa-solid fa-table-cells" },
+      { colsClass: "cols-4", label: "4 أعمدة", icon: "fa-solid fa-grip" }
+    ];
+
+    function initTheme() {
+      try {
+        const saved = localStorage.getItem("sabaya_theme");
+        if (saved === "light") {
+          isLightTheme = true;
+          document.body.classList.add("light-mode");
+        }
+      } catch (e) {}
+      syncThemeIcon();
+    }
+
+    function toggleThemeMode() {
+      isLightTheme = !isLightTheme;
+      document.body.classList.toggle("light-mode", isLightTheme);
+      try {
+        localStorage.setItem("sabaya_theme", isLightTheme ? "light" : "dark");
+      } catch (e) {}
+      syncThemeIcon();
+      showToast(isLightTheme ? "تم تفعيل الوضع النهاري" : "تم تفعيل الوضع الليلي");
+    }
+
+    function syncThemeIcon() {
+      const icon = document.getElementById("themeIcon");
+      if (!icon) return;
+      icon.className = isLightTheme ? "fa-solid fa-moon" : "fa-solid fa-sun";
+    }
+
+    function normalizeText(str) {
+      return (str || "")
+        .trim()
+        .toLowerCase()
+        .replace(/[أإآ]/g, "ا")
+        .replace(/ة/g, "ه")
+        .replace(/ى/g, "ي");
+    }
+
+    function formatPrice(num) {
+      const val = Number(num) || 0;
+      return `${val.toLocaleString("en-US")} ${STORE_CONFIG.currency}`;
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toastBanner");
+      toast.textContent = msg;
+      toast.classList.add("show");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2200);
+    }
+
+    function getVisibleProducts() {
+      return PRODUCTS.filter(p => p && p.name && p.name.trim() !== "");
+    }
+
+    function handleSearchOrFilterChange() {
+      visibleLimit = STORE_CONFIG.pageSize;
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const searchInput = document.getElementById("searchInput");
+      const clearBtn = document.getElementById("clearSearchBtn");
+      const sortSelect = document.getElementById("sortSelect");
+
+      const query = normalizeText(searchInput.value);
+      clearBtn.classList.toggle("visible", searchInput.value.trim().length > 0);
+
+      let list = getVisibleProducts();
+
+      if (activeCategory !== "الكل") {
+        list = list.filter(p => normalizeText(p.category) === normalizeText(activeCategory));
+      }
+
+      if (query) {
+        list = list.filter(p =>
+          normalizeText(p.name).includes(query) ||
+          normalizeText(p.brand).includes(query) ||
+          normalizeText(p.category).includes(query) ||
+          normalizeText(p.subtag || "").includes(query)
+        );
+      }
+
+      if (sortSelect.value === "price-asc") {
+        list = [...list].sort((a, b) => (Number(a.price) || 0) - (Number(b.price) || 0));
+      } else if (sortSelect.value === "price-desc") {
+        list = [...list].sort((a, b) => (Number(b.price) || 0) - (Number(a.price) || 0));
+      }
+
+      currentFilteredList = list;
+      renderProductsChunk();
+    }
+
+    function loadMoreProducts() {
+      visibleLimit += STORE_CONFIG.pageSize;
+      renderProductsChunk();
+    }
+
+    function renderProductsChunk() {
+      const grid = document.getElementById("productsGrid");
+      const counter = document.getElementById("productsCountLabel");
+      const loadMoreWrap = document.getElementById("loadMoreWrap");
+      const loadMoreInfo = document.getElementById("loadMoreInfo");
+      const total = currentFilteredList.length;
+
+      counter.textContent = `إجمالي المنتجات: ${total}`;
+
+      if (!total) {
+        loadMoreWrap.style.display = "none";
+        grid.innerHTML = `
+          <div class="empty-state">
+            <i class="fa-solid fa-sparkles"></i>
+            <div style="font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">لا توجد منتجات مطابقة حالياً</div>
+            <div style="font-size: 0.78rem;">جرّبي قسماً آخر أو امسحي كلمة البحث لعرض جميع المنتجات.</div>
+          </div>
+        `;
+        return;
+      }
+
+      const slice = currentFilteredList.slice(0, visibleLimit);
+
+      grid.innerHTML = slice.map(p => {
+        const isFav = favorites.includes(p.id);
+        const mediaHtml = p.img
+          ? `<img src="${escapeHtml(p.img)}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async" onerror="this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='flex';" />
+             <div class="img-placeholder-box" style="display:none;"><i class="fa-regular fa-image"></i><span>${escapeHtml(p.category)}</span></div>`
+          : `<div class="img-placeholder-box"><i class="fa-solid fa-sparkles"></i><span>${escapeHtml(p.category)}</span></div>`;
+
+        const oldPriceHtml = p.oldPrice && Number(p.oldPrice) > Number(p.price)
+          ? `<span class="prod-old-price">${formatPrice(p.oldPrice)}</span>`
+          : "";
+
+        const badgeHtml = p.badge ? `<span class="prod-tag">${escapeHtml(p.badge)}</span>` : "";
+
+        return `
+          <article class="product-card">
+            <div>
+              <div class="prod-img-wrap" onclick="openDetailModal(${p.id})">
+                ${badgeHtml}
+                <div class="card-float-actions" onclick="event.stopPropagation()">
+                  <button type="button" class="float-act-btn ${isFav ? 'active' : ''}" onclick="toggleFavorite(${p.id})" title="أعجبني" aria-label="أعجبني">
+                    <i class="${isFav ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+                  </button>
+                  <button type="button" class="float-act-btn" onclick="shareProduct(${p.id})" title="مشاركة" aria-label="مشاركة">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+                ${mediaHtml}
+              </div>
+
+              <div class="prod-meta-top">
+                <span class="prod-brand">${escapeHtml(p.brand || STORE_CONFIG.storeName)}</span>
+                <span class="prod-cat-label">${escapeHtml(p.category || "")}</span>
+              </div>
+
+              <h3 class="prod-title" onclick="openDetailModal(${p.id})">${escapeHtml(p.name)}</h3>
+            </div>
+
+            <div>
+              <div class="prod-price-row">
+                <span class="prod-price">${formatPrice(p.price)}</span>
+                ${oldPriceHtml}
+              </div>
+              <button type="button" class="btn-add-prod" onclick="addToCart(${p.id})">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>أضيفي للسلة</span>
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      if (slice.length < total) {
+        loadMoreWrap.style.display = "flex";
+        loadMoreInfo.textContent = `المعروض حالياً ${slice.length} من أصل ${total} منتج`;
+      } else {
+        loadMoreWrap.style.display = "none";
+      }
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function selectCategory(catName, btnEl) {
+      closeAllModals();
+      activeCategory = catName;
+      visibleLimit = STORE_CONFIG.pageSize;
+      document.querySelectorAll(".cat-pill").forEach(btn => btn.classList.remove("active"));
+      if (btnEl) {
+        btnEl.classList.add("active");
+        btnEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
+      applyFilters();
+    }
+
+    function selectCategoryByName(catName) {
+      const targetBtn = Array.from(document.querySelectorAll(".cat-pill"))
+        .find(btn => btn.getAttribute("data-cat") === catName);
+      selectCategory(catName, targetBtn || null);
+      const bar = document.getElementById("categoriesBar");
+      if (bar) bar.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    function clearSearch() {
+      document.getElementById("searchInput").value = "";
+      visibleLimit = STORE_CONFIG.pageSize;
+      applyFilters();
+    }
+
+    function resetStoreHome() {
+      closeAllModals();
+      document.getElementById("searchInput").value = "";
+      document.getElementById("sortSelect").value = "default";
+      visibleLimit = STORE_CONFIG.pageSize;
+      const allBtn = document.querySelector('.cat-pill[data-cat="الكل"]');
+      activeCategory = "الكل";
+      document.querySelectorAll(".cat-pill").forEach(btn => btn.classList.remove("active"));
+      if (allBtn) allBtn.classList.add("active");
+      applyFilters();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function cycleGridLayout() {
+      layoutIndex = (layoutIndex + 1) % GRID_LAYOUTS.length;
+      const cfg = GRID_LAYOUTS[layoutIndex];
+      const grid = document.getElementById("productsGrid");
+      grid.classList.remove("cols-3", "cols-4");
+      if (cfg.colsClass) grid.classList.add(cfg.colsClass);
+      document.getElementById("layoutIcon").className = cfg.icon;
+      document.getElementById("layoutLabel").textContent = cfg.label;
+      showToast(`تم التبديل إلى ${cfg.label}`);
+    }
+
+    // شرائح البنر الرئيسية
+    function goToHeroSlide(idx) {
+      const track = document.getElementById("heroTrack");
+      const dots = document.querySelectorAll("#heroDots .hero-dot");
+      const total = dots.length;
+      if (!track || !total) return;
+      heroIndex = ((idx % total) + total) % total;
+      track.style.transform = `translateX(${heroIndex * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle("active", i === heroIndex));
+    }
+
+    setInterval(() => {
+      goToHeroSlide(heroIndex + 1);
+    }, 5000);
+
+    // تفاصيل المنتج
+    function openDetailModal(productId) {
+      const prod = PRODUCTS.find(p => p.id === productId);
+      if (!prod) return;
+      currentDetailProduct = prod;
+      selectedDetailOption = (prod.options && prod.options.length) ? prod.options[0] : "";
+
+      const imgHtml = prod.img
+        ? `<img src="${escapeHtml(prod.img)}" alt="${escapeHtml(prod.name)}" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';" />
+           <div class="img-placeholder-box" style="display:none;"><i class="fa-regular fa-image" style="font-size:2rem;"></i><span>${escapeHtml(prod.category)}</span></div>`
+        : `<div class="img-placeholder-box"><i class="fa-solid fa-sparkles" style="font-size:2rem;"></i><span>${escapeHtml(prod.category)}</span></div>`;
+
+      const optionsHtml = (prod.options && prod.options.length)
+        ? `
+          <div style="font-size: 0.78rem; font-weight: 800; color: var(--text-primary);">اختاري الخيار المناسب:</div>
+          <div class="option-chips" id="detailOptionChips">
+            ${prod.options.map((opt, idx) => `
+              <button type="button" class="option-chip ${idx === 0 ? 'selected' : ''}" onclick="chooseDetailOption(this, '${escapeHtml(opt)}')">${escapeHtml(opt)}</button>
+            `).join("")}
+          </div>
+        `
+        : "";
+
+      const validFeatures = (prod.features || []).filter(f => f && f.trim() !== "");
+      const featuresHtml = validFeatures.length
+        ? `
+          <div style="font-size: 0.78rem; font-weight: 800; color: var(--text-primary);">المميزات:</div>
+          <ul class="features-list">
+            ${validFeatures.map(f => `<li><i class="fa-solid fa-circle-check"></i><span>${escapeHtml(f)}</span></li>`).join("")}
+          </ul>
+        `
+        : "";
+
+      document.getElementById("detailModalTitle").textContent = prod.brand || STORE_CONFIG.storeName;
+      document.getElementById("detailModalBody").innerHTML = `
+        <div class="detail-hero-img">${imgHtml}</div>
+        <div style="font-size: 0.72rem; color: var(--accent-gold); font-weight: 800; margin-bottom: 4px;">${escapeHtml(prod.category || "")}</div>
+        <h2 style="font-size: 1.02rem; font-weight: 900; color: var(--text-primary); margin-bottom: 6px;">${escapeHtml(prod.name)}</h2>
+        <div style="font-size: 1.02rem; font-weight: 900; color: var(--accent-rose); margin-bottom: 12px;">${formatPrice(prod.price)}</div>
+        ${optionsHtml}
+        ${featuresHtml}
+      `;
+
+      document.getElementById("detailModalFoot").innerHTML = `
+        <button type="button" class="btn-primary-glow" style="width: 100%; justify-content: center; padding: 11px;" onclick="addCurrentDetailToCart()">
+          <i class="fa-solid fa-cart-plus"></i>
+          <span>إضافة إلى السلة</span>
+        </button>
+      `;
+
+      document.getElementById("detailModal").classList.add("open");
+    }
+
+    function chooseDetailOption(btn, optVal) {
+      document.querySelectorAll("#detailOptionChips .option-chip").forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      selectedDetailOption = optVal;
+    }
+
+    function addCurrentDetailToCart() {
+      if (!currentDetailProduct) return;
+      addToCart(currentDetailProduct.id, selectedDetailOption);
+      closeModal("detailModal");
+    }
+
+    // المفضلة والمشاركة
+    function toggleFavorite(productId) {
+      const idx = favorites.indexOf(productId);
+      if (idx === -1) {
+        favorites.push(productId);
+        showToast("تمت الإضافة إلى المفضلة");
+      } else {
+        favorites.splice(idx, 1);
+        showToast("تمت الإزالة من المفضلة");
+      }
+      updateBadges();
+      renderProductsChunk();
+    }
+
+    function openFavoritesModal() {
+      const body = document.getElementById("favModalBody");
+      const favItems = PRODUCTS.filter(p => favorites.includes(p.id) && p.name);
+
+      if (!favItems.length) {
+        body.innerHTML = `<div style="text-align:center; padding: 30px 10px; color: var(--text-muted); font-size: 0.84rem;">لا توجد منتجات في المفضلة بعد.</div>`;
+      } else {
+        body.innerHTML = favItems.map(p => `
+          <div class="cart-item-row">
+            <div style="flex:1;">
+              <div style="font-weight: 800; font-size: 0.84rem; color: var(--text-primary);">${escapeHtml(p.name)}</div>
+              <div style="color: var(--accent-gold); font-size: 0.78rem; font-weight: 800;">${formatPrice(p.price)}</div>
+            </div>
+            <div style="display: flex; gap: 6px;">
+              <button type="button" class="btn-primary-glow" style="padding: 6px 10px; font-size: 0.72rem;" onclick="addToCart(${p.id}); closeModal('favModal');">أضيفي</button>
+              <button type="button" class="close-modal-btn" onclick="toggleFavorite(${p.id}); openFavoritesModal();"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      document.getElementById("favModal").classList.add("open");
+    }
+
+    function shareProduct(productId) {
+      const p = PRODUCTS.find(item => item.id === productId);
+      if (!p) return;
+      const text = `${p.name} — ${formatPrice(p.price)} من متجر ${STORE_CONFIG.storeName}`;
+      if (navigator.share) {
+        navigator.share({ title: STORE_CONFIG.storeName, text, url: window.location.href }).catch(() => {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => showToast("تم نسخ تفاصيل المنتج")).catch(() => showToast("تم نسخ المنتج"));
+      } else {
+        showToast("تمت جاهزية المشاركة");
+      }
+    }
+
+    // السلة وإتمام الطلب عبر واتساب
+    function addToCart(productId, selectedOption = "") {
+      const prod = PRODUCTS.find(p => p.id === productId);
+      if (!prod) return;
+      const opt = selectedOption || (prod.options && prod.options[0]) || "";
+      const existing = cart.find(item => item.id === productId && item.selectedOption === opt);
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: prod.id,
+          name: prod.name,
+          brand: prod.brand || STORE_CONFIG.storeName,
+          price: Number(prod.price) || 0,
+          selectedOption: opt,
+          qty: 1
+        });
+      }
+
+      updateBadges();
+      showToast(`تمت إضافة "${prod.name}" إلى السلة`);
+    }
+
+    function changeCartQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateBadges();
+      renderCartModal();
+    }
+
+    function clearCart() {
+      cart = [];
+      updateBadges();
+      renderCartModal();
+      showToast("تم إفراغ السلة");
+    }
+
+    function updateBadges() {
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById("headerCartBadge").textContent = totalQty;
+      document.getElementById("bottomCartBadge").textContent = totalQty;
+      document.getElementById("favCountBadge").textContent = favorites.length;
+    }
+
+    function openCartModal() {
+      renderCartModal();
+      document.getElementById("cartModal").classList.add("open");
+    }
+
+    function renderCartModal() {
+      const body = document.getElementById("cartModalBody");
+      const foot = document.getElementById("cartModalFoot");
+
+      if (!cart.length) {
+        body.innerHTML = `
+          <div style="text-align: center; padding: 36px 12px; color: var(--text-muted);">
+            <i class="fa-solid fa-bag-shopping" style="font-size: 2rem; color: var(--accent-rose); margin-bottom: 8px; display: block;"></i>
+            <div style="font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">السلة فارغة حالياً</div>
+            <div style="font-size: 0.78rem;">اختاري المنتجات التي تعجبك وأضيفيها لإرسال طلبك عبر الواتساب.</div>
+          </div>
+        `;
+        foot.innerHTML = "";
+        return;
+      }
+
+      let subtotal = 0;
+      body.innerHTML = cart.map((item, idx) => {
+        const lineTotal = item.price * item.qty;
+        subtotal += lineTotal;
+        const optText = item.selectedOption ? `<div style="font-size: 0.7rem; color: var(--text-secondary);">الخيار: ${escapeHtml(item.selectedOption)}</div>` : "";
+        return `
+          <div class="cart-item-row">
+            <div style="flex: 1;">
+              <div style="font-size: 0.84rem; font-weight: 800; color: var(--text-primary);">${escapeHtml(item.name)}</div>
+              ${optText}
+              <div style="font-size: 0.78rem; color: var(--accent-gold); font-weight: 800; margin-top: 2px;">${formatPrice(lineTotal)}</div>
+            </div>
+            <div class="qty-box">
+              <button type="button" class="qty-btn" onclick="changeCartQty(${idx}, -1)">-</button>
+              <span style="font-size: 0.8rem; font-weight: 800; min-width: 16px; text-align: center;">${item.qty}</span>
+              <button type="button" class="qty-btn" onclick="changeCartQty(${idx}, 1)">+</button>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      foot.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-weight: 900;">
+          <span style="font-size: 0.88rem;">الإجمالي:</span>
+          <span style="font-size: 1rem; color: var(--accent-gold);">${formatPrice(subtotal)}</span>
+        </div>
+        <button type="button" class="btn-whatsapp-confirm" onclick="sendCartToWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>إرسال الطلب عبر الواتساب</span>
+        </button>
+      `;
+    }
+
+    function sendCartToWhatsApp() {
+      if (!cart.length) return;
+      let total = 0;
+      let lines = [
+        `مرحباً بكم في متجر *${STORE_CONFIG.storeName}*، أود تأكيد الطلب التالي:`,
+        ""
+      ];
+
+      cart.forEach((item, i) => {
+        const lineTotal = item.price * item.qty;
+        total += lineTotal;
+        const optPart = item.selectedOption ? ` (${item.selectedOption})` : "";
+        lines.push(`${i + 1}. *${item.name}*${optPart} × ${item.qty} = ${formatPrice(lineTotal)}`);
+      });
+
+      lines.push("");
+      lines.push(`*الإجمالي:* ${formatPrice(total)}`);
+
+      const url = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(url, "_blank", "noopener");
+    }
+
+    function openCustomOrderModal() {
+      document.getElementById("customOrderModal").classList.add("open");
+    }
+
+    function submitCustomWhatsAppOrder() {
+      const typeVal = document.getElementById("customType").value;
+      const detailsVal = document.getElementById("customDetails").value.trim();
+      const notesVal = document.getElementById("customNotes").value.trim();
+
+      if (!detailsVal) {
+        showToast("يرجى كتابة تفاصيل الطلب أولاً");
+        return;
+      }
+
+      const lines = [
+        `مرحباً *${STORE_CONFIG.storeName}*، لدي طلب خاص:`,
+        `• القسم: ${typeVal}`,
+        `• التفاصيل: ${detailsVal}`
+      ];
+      if (notesVal) {
+        lines.push(`• ملاحظات: ${notesVal}`);
+      }
+
+      const url = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(url, "_blank", "noopener");
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove("open");
+    }
+
+    function closeAllModals() {
+      document.querySelectorAll(".modal-backdrop").forEach(m => m.classList.remove("open"));
+    }
+
+    function backdropClose(event, id) {
+      if (event.target.id === id) {
+        closeModal(id);
+      }
+    }
+
+    // تشغيل العرض الأولي
+    initTheme();
+    applyFilters();
+    updateBadges();
+  
